@@ -6,10 +6,37 @@ import MouseTracker from "@/components/MouseTracker";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTypingEffect } from "@/hooks/useTypingEffect";
+import Section1 from '@/components/Section1';
+import Section2 from '@/components/Section2';
+import Section3 from '@/components/Section3';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Définir une fonction pour gérer le clic sur un lien du menu
+  const scrollToSection = (sectionId) => {
+    scroller.scrollTo(sectionId, {
+      duration: 800, // durée de la transition en millisecondes
+      delay: 0, // délai avant le début de la transition en millisecondes
+      smooth: 'easeInOutQuart' // type de transition
+    });
+  };
 
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
@@ -33,10 +60,10 @@ export default function Home() {
     };
   }, []);
 
-  // On utilise codePresentation dans une balise <pre> permettant d'insérer du texte pré-formatté.
+  // On utilise authorName dans une balise <pre> permettant d'insérer du texte pré-formatté.
   // Modifier l'indentation et les espaces blancs modifiera donc le rendu visuel sur le site.
 
-  let codePresentation : any = 
+  const authorName : string = 
   `Andoni
           Laporte`;
 
@@ -80,8 +107,8 @@ export default function Home() {
     }
   };
 
-  let code = useTypingEffect(
-    codePresentation,
+  const typingAuthorName = useTypingEffect(
+    authorName,
     animationTime,
     [
       {word: 'AndoniLaporte', color: '#E1601B'},
@@ -103,6 +130,10 @@ export default function Home() {
     triggerAnimation,
   );
 
+    const [urlVideo, setUrlVideo] = useState("test.mp4");
+    scrollY < windowHeight && urlVideo !== "test.mp4" && setUrlVideo("test.mp4");
+    scrollY > windowHeight && urlVideo !== "amaia-website.mp4" && setUrlVideo("amaia-website.mp4");
+    console.log(urlVideo)
   return (
     <>
       <Head>
@@ -114,29 +145,49 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=MonteCarlo&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Passions+Conflict&family=Square+Peg&display=swap" rel="stylesheet" />       
       </Head>
+
       <main className={`${styles.main} ${inter.className}`}>
-        <div className={ styles.firstGrid }>
-          <div className={ styles.codePresentation }>
+        <div className={styles.fixed}>
+          <div className={ styles.authorName }>
             <pre className={ styles.identite }>
-              {code}
+              {typingAuthorName}
             </pre>
           </div>
-          <div className={ `${styles.title} font1` }>
-            Développeur web & mobile
-          </div>
           <div className={styles.menu}>
-            <li>
-              <button className={styles.button}>Présentation</button>
-            </li>
-            <li>
-              <button className={styles.button}>Projets</button>
-            </li>
-            <li>
-              <button className={styles.button}>Contact</button>
-            </li>
+              <li>
+                <Link 
+                    className={styles.navLink} 
+                    to="section1" 
+                    smooth={true} 
+                    duration={800} 
+                    onClick={() => scrollToSection("section1")}
+                  >
+                  Accueil
+                </Link>
+              </li>
+              <li>
+                <Link 
+                    className={styles.navLink} 
+                    to="section2" 
+                    smooth={true} 
+                    duration={800} 
+                    onClick={() => scrollToSection("section2")}
+                  >
+                  Projets
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  className={styles.navLink} 
+                  to="section3" 
+                  smooth={true} 
+                  duration={800} 
+                  onClick={() => scrollToSection("section3")}
+                >
+                  A propos
+                </Link>
+              </li>
           </div>
-          {/* <MouseTracker/> */}
-          <div className={ styles.flamme }></div>
           <Image 
             src="/openbook6.webp"
             alt="openbook"
@@ -144,12 +195,24 @@ export default function Home() {
             height={0}
             className={styles.openbook}
           />
-          <video className={styles.video} autoPlay={true} muted={true} loop={true}>
-              <source src="/test.mp4" type="video/mp4"/>
+          <video key={urlVideo} className={styles.video} autoPlay={true} muted={true} loop={true}>
+              <source src={urlVideo} type="video/mp4"/>
               Votre navigateur ne permet pas de lire cette vidéo.
           </video>
           <div className={ styles.shootingStar }></div>
         </div>
+
+        <Element id="section1">
+          <Section1 />
+        </Element>
+        <Element id="section2">
+          <Section2 />
+        </Element>
+        <Element id="section3">
+          <Section3 />
+        </Element>
+        {/* <MouseTracker/> */}
+        {/* <div className={ styles.flamme }></div> */}
       </main>
     </>
   );
