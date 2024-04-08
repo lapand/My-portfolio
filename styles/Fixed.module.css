@@ -1,0 +1,117 @@
+.fixed {
+    position: absolute;
+    width: 100%;
+    height: 200vh;
+    padding: 20px 0.7% 20px 2.7%;
+    /* z-index: 0; */
+    /* border: 2px solid rgb(46, 255, 60); */
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  /* z-index: 0; */
+  /* border: 2px solid rgb(21, 7, 132); */
+}
+
+.authorName {
+  /* position:relative; */
+  padding: 5%;
+  /* animation: Sstarpulse 0.06s infinite; */
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  /* border: 2px solid white; */
+}
+
+.identite {
+  line-height: 1.5em;
+}
+
+.identite span {
+font-size: 1.6em;
+/* border:2px solid white; */
+/* color: #ed5836; */
+/* color: #b85c38; */
+/* color: #d1654f; */
+/* color: #f2613f; */
+/* color: #9b3922; */
+/* color: #e0c097; */
+/* color: #f2e1c1; */
+}
+
+.menu {
+grid-column: 11 / 13;
+grid-row: 1 / 7;
+display:flex;
+flex-direction: column;
+align-items: flex-end;
+justify-content: center;
+/* border:2px solid red; */
+}
+.menu li {
+margin: 20px;
+list-style: none;
+}
+.navLink {
+background-color: inherit;
+padding: 15px 15px 15px 30px;
+border: none;
+border-radius: 50px 0px 0 50px;
+/* font-size: 1.4em; */
+}
+.navLink:hover {
+box-shadow: 3px 3px 8px 2px;
+cursor: pointer;
+}
+
+.openbook {
+    /* width:800; */
+    /* height:auto; */
+    position:absolute;
+    z-index:3;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: left 2s ease;
+    /* bottom: 13%; */
+    /* right: 13%; */
+    /* border:2px solid orange; */
+    /* transition: transform 2s, right 2s, bottom 2s; */
+  }
+  
+  .video {
+    width:35%;
+    position:absolute;
+    top: 48%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: left 2s ease;
+    /* border:2px solid red; */
+  }
+
+  .translation{
+    left: 65%;
+  }
+  
+  /* .openbook:hover {
+    transform: scale(3);
+    right: 30%;
+    bottom: 0%;
+  } */
+
+  .shootingStar {
+    width:5px;
+    height:5px;
+    background:linear-gradient(to top right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));    
+    border-radius:50%;
+    position:absolute;
+    z-index: 4;
+    opacity: 0;
+    /* border:2px solid cyan; */
+  }

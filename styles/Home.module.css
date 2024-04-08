@@ -5,68 +5,76 @@
   /* align-items: flex-start; */
   min-height: 100vh;
   /* border: 2px solid red; */
-  background: linear-gradient(to top right, #000000, #111111 60%, #292929);
-  /* background-image:url("../public/background1.jpg");
-  background-size:cover;
-  background-position: center center; */
+  /* background: linear-gradient(to top right, #000000, #111111 60%, #292929); */
+  background-color: black;
 }
 
-.fixed {
-  /* border: 2px solid red; */
-  position: fixed;
-  width: 100%;
+.backgroundReveal {
+  position:absolute;
   height: 100vh;
+  width: 100%;
+  background-image:url("../public/background.png");
+  background-size:cover;
+  background-position: center center;
+  mask-size: 200% 200%;
+  mask-position: 20% 52%;
+  mask-repeat: no-repeat;
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, .8) 0%,
+    rgba(0, 0, 0, .8) 10%,
+    rgba(0, 0, 0, 0.4) 14%,
+    transparent 18%
+  );
+  animation: pulse 3s infinite alternate;
+  border:2px solid #ed5836;
 }
 
-.authorName {
-  position:relative;
-  padding: 2%;
-  /* animation: Sstarpulse 0.06s infinite; */
-    /* border: 2px solid white; */
+@keyframes pulse {
+  100% {
+    mask-size: 250% 250%;
+    mask-position: 29% 52%;
+  }
+  /* 0% {
+    mask-image: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, .8) 0%,
+      rgba(0, 0, 0, .8) 10%,
+      rgba(0, 0, 0, 0.4) 14%,
+      transparent 18%
+    );
+  }
+  50% {
+    mask-image: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, .8) 0%,
+      rgba(0, 0, 0, .8) 15%,
+      rgba(0, 0, 0, 0.4) 18%, 
+      transparent 20%
+    );
+  }
+  100% {
+    mask-image: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, .8) 0%,
+      rgba(0, 0, 0, .8) 20%,
+      rgba(0, 0, 0, 0.4) 24%,
+      transparent 28%
+    );
+  } */
 }
 
-.identite span {
-  font-size: 2em;
-}
-
-.menu {
-  /* grid-column: 11 / 13; */
-  /* grid-row: 2 / 5; */
-  display:flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  /* border:2px solid red; */
-}
-.menu li {
-  margin: 20px;
-  list-style: none;
-}
-.navLink {
-  background-color: inherit;
-  padding: 15px 15px 15px 30px;
-  border: none;
-  border-radius: 50px 0px 0 50px;
-  font-size: 1.4em;
-}
-.navLink:hover {
-  box-shadow: 3px 3px 8px 2px;
-  cursor: pointer;
-}
-
-.flamme {
-  /* background-color: white; */
-  position: absolute;
-  top: 30%;
-  left:87%;
-  /* background: transparent; */
+.light {
+  position:absolute;
+  left: calc(80%);
+  top: calc(48%);
   border-radius: 50%;
-  animation: flicker 1s infinite alternate;
   box-shadow: 
-  0 0 200px 120px rgba(255, 255, 255, 0.8),
-  0 0 20px 10px rgba(255, 255, 255, 0.5),
-  0 0 30px 15px rgba(255, 255, 255, 0.3);
-  /* box-shadow: 0 0 200px 120px rgba(0, 115, 255, 0.5), 0 0 20px 10px rgba(0, 60, 255, 0.3), 0 0 30px 15px rgba(38, 0, 0, 0.2); */
+  0 0 200px 120px rgba(255, 255, 255, 1),
+  0 0 100px 60px rgba(255, 255, 255, 0.6),
+  0 0 20px 10px rgba(255, 255, 255, .7),
+  0 0 30px 15px rgba(255, 255, 255, .9);
+  animation: flicker 1s infinite alternate;
 }
 
 @keyframes flicker {
@@ -90,57 +98,8 @@
   }
 }
 
-.openbook {
-  /* width:800; */
-  height:auto;
-  position:absolute;
-  z-index:1;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  /* bottom: 13%; */
-  /* right: 13%; */
-  /* border:2px solid orange; */
-  transition: transform 2s, right 2s, bottom 2s;
-}
-
-.video {
-  width:35%;
-  position:absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  /* z-index: 10; */
-  /* border:2px solid red; */
-}
-
-/* .openbook:hover {
-  transform: scale(3);
-  right: 30%;
-  bottom: 0%;
-} */
-
 /* @keyframes Sstarpulse {
   0% {box-shadow: 0px 0px 0px 0px white;}
   100% {box-shadow:0px 0px 8px 3px white;}
 } */
 
-.shootingStar {
-  width:5px;
-  height:5px;
-  background:linear-gradient(to top right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));    
-  border-radius:50%;
-  position:absolute;
-  z-index: 2;
-  opacity: 0;
-  /* transform:rotate(40deg); */
-  /* animation: streak .2s linear infinite; */
-  /* border: 2px solid red; */
-}
-
-/* @keyframes streak {
-  0% {left:45%; top:60%;}
-  20% {opacity:1;}
-  50% {opacity:1;}
-  100% {left:5%; top:10%; width:70px; opacity:0;}
-} */

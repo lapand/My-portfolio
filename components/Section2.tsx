@@ -5,7 +5,7 @@ import { useState } from 'react';
 //   id: string;
 // }
 
-export default function Section2(){
+export default function Section2({ handleSelectProject, projectTitle, projectContent }){
 
   const [reveal, setReveal] = useState(false);
 
@@ -24,21 +24,20 @@ export default function Section2(){
   function handleMouseLeave() {
     setReveal(false);
   }
-  
+
     return(
         <div 
           className={styles.grid} 
         >
-        {/* <div 
-          className={`${styles.grid} ${reveal ? 'reveal' : ''}`} 
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        > */}
-          {/* <div className={styles.background}></div> */}
           <div className={ styles.title }>
-            Section 2
+            {projectTitle}
           </div>
-          <div className={styles.content}>Hello world 2</div>
+          <div className={styles.content}>{projectContent}</div>
+          <div className={styles.swipeBtnCtn}>
+            <button className={styles.swipeBtn} onClick={() => handleSelectProject(0)}></button>
+            <button className={styles.swipeBtn} onClick={() => handleSelectProject(1)}></button>
+            <button className={styles.swipeBtn} onClick={() => handleSelectProject(2)}></button>
+          </div>
         </div>
     );
 }

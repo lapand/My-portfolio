@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import styles from "@/styles/useTypingEffect.module.css";
+import triggerFlyingLetters from "@/modules/triggerFlyingLetters";
 
 type WordToColor = {
     word: string;
@@ -13,12 +14,12 @@ export function useTypingEffect(
     textToType: string,
     interKeyStrokeDurationInMs: number,
     wordsToColor: WordToColor[],
-    triggerAnimation: Function,
+    shootingStarRef: HTMLDivElement,
 ){
     const [currentPosition, setCurrentPosition] = useState(0);
     const currentPositionRef = useRef(0);
 
-// Récupère la position de l'élément DOM correspondant à la dernière lettre
+    // Récupère la position de l'élément du DOM correspondant à la dernière lettre
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -43,7 +44,20 @@ export function useTypingEffect(
         i < array.length - 1 ?
             <span key={i}>{letter}</span>
         :
-            <span key={i} ref={node => triggerAnimation(node)}>{letter}</span>
+            <span 
+                key={i} 
+                style={{ opacity: '0' }}
+                ref={node => {
+                    // sauf espaces, les tabulations et les sauts de ligne
+                    if(node && node.textContent && !/^\s*$/.test(node.textContent)){
+                        // console.log(node)
+                        triggerFlyingLetters(node, interKeyStrokeDurationInMs, shootingStarRef);
+                        setTimeout(() => node.style.opacity = '1', interKeyStrokeDurationInMs);
+                    }
+                }}
+            >
+                {letter}
+            </span>
     );
 
     return parts;
