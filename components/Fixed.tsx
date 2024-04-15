@@ -62,10 +62,24 @@ export default function Fixed({sections, actualSection, selectedProjectVideoUri,
       <div className={styles.fixed}>
         <div className={ styles.shootingStar } ref={shootingStarRef}></div>
         <div className={styles.sticky}>
+        {/* <div className={styles.backgroundReveal}>
+          <div className={styles.light}></div>
+        </div> */}
           <div className={ styles.authorName }>
             <pre className={ styles.identite }>
               {typingAuthorName}
             </pre>
+            <Image
+              src="/lanterne.png"
+              alt="lanterne"
+              width={60}
+              height={120}
+              style={{
+                width: '35%',
+                height: 'auto',
+              }}
+              className={styles.lanterne}
+            />
           </div>
           <div className={styles.menu}>
               <li>

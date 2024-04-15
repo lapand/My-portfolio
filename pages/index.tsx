@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import MouseTracker from "@/components/MouseTracker";
 import { useSearchParams } from "next/navigation";
@@ -10,9 +9,8 @@ import Fixed from '@/components/Fixed';
 import Section1 from '@/components/Section1';
 import Section2 from '@/components/Section2';
 import Section3 from '@/components/Section3';
+import Scrollbar from "@/components/Scrollbar";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(): JSX.Element {
 
@@ -29,12 +27,12 @@ export default function Home(): JSX.Element {
       projects: [
         {
           title: "Amaia Carrere",
-          videoUri: "amaia-website.mp4",
-          content: "Site vitrine d'une illustratrice de bande-dessinées."
+          videoUri: "amaia-website2.mp4",
+          content: `Site vitrine d'une illustratrice et dessinatrice de bande-dessinées.`
         },
         {
           title: "Board Game Companion",
-          videoUri: "arbre.mp4",
+          videoUri: "bgc3.mp4",
           content: "Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis."
         },
         {
@@ -112,34 +110,49 @@ export default function Home(): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`${styles.main} ${inter.className}`}>
-
-        <div className={styles.backgroundReveal}>
-          <div className={styles.light}></div>
-        </div>
-        <Element id="section1">
-          <Section1 />
-        </Element>
-        <Element id="section2">
-          <Section2 
-            handleSelectProject={handleSelectProject} 
-            projectTitle={selectedProject.title}
-            projectContent={selectedProject.content}
+      
+        <main className={styles.main}>
+          {/* <Scrollbar> */}
+          <div className={styles.engrenagesCtn}>
+            <Image 
+              src="/engrenages.png" 
+              alt="engrenages" 
+              className={styles.engrenages}
+              width={100}
+              height={100}
+              style={{
+                width: '100%',
+                height: '100%',
+              }}
+            />
+          </div>
+          <div className={styles.backgroundReveal}>
+            <div className={styles.light}></div>
+          </div>
+          <Element id="section1">
+            <Section1 />
+          </Element>
+          <Element id="section2">
+            <Section2 
+              handleSelectProject={handleSelectProject} 
+              projectTitle={selectedProject.title}
+              projectContent={selectedProject.content}
+            />
+          </Element>
+          <Element id="section3">
+            <Section3 />
+          </Element>
+          {/* <MouseTracker/> */}
+          {/* <div className={ styles.flamme }></div> */}
+          <Fixed 
+            sections={sections}
+            actualSection={actualSection}
+            selectedProjectVideoUri={selectedProjectVideoUri}
+            isBookAtSection2={isBookAtSection2}
           />
-        </Element>
-        <Element id="section3">
-          <Section3 />
-        </Element>
-        {/* <MouseTracker/> */}
-        {/* <div className={ styles.flamme }></div> */}
-        <Fixed 
-          sections={sections}
-          actualSection={actualSection}
-          selectedProjectVideoUri={selectedProjectVideoUri}
-          isBookAtSection2={isBookAtSection2}
-        />
-
-      </main>
+          {/* </Scrollbar> */}
+        </main>
+      
     </>
   );
 }

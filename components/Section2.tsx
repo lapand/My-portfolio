@@ -29,10 +29,10 @@ export default function Section2({ handleSelectProject, projectTitle, projectCon
         <div 
           className={styles.grid} 
         >
-          <div className={ styles.title }>
-            {projectTitle}
+          <div className={styles.content}>
+            <h2 className={ styles.projectTitle }>{projectTitle}</h2>
+            <p>{projectContent}</p>
           </div>
-          <div className={styles.content}>{projectContent}</div>
           <div className={styles.swipeBtnCtn}>
             <button className={styles.swipeBtn} onClick={() => handleSelectProject(0)}></button>
             <button className={styles.swipeBtn} onClick={() => handleSelectProject(1)}></button>

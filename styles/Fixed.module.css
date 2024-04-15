@@ -25,11 +25,72 @@
   /* animation: Sstarpulse 0.06s infinite; */
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  position: relative;
   /* border: 2px solid white; */
 }
 
 .identite {
   line-height: 1.5em;
+}
+
+.backgroundReveal {
+  position:absolute;
+  height: 100vh;
+  width: 100%;
+  background-image:url("../public/background.png");
+  background-size:cover;
+  background-position: center center;
+  mask-size: 200% 200%;
+  mask-position: 91% 82%;
+  mask-repeat: no-repeat;
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, .9) 0%,
+    rgba(0, 0, 0, .8) 10%,
+    rgba(0, 0, 0, 0.4) 14%,
+    transparent 80%
+  );
+  animation: pulse 3s infinite alternate;
+  border:2px solid #ed5836;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  100% {
+    mask-size: 250% 250%;
+    mask-position: 76.5% 70%;
+  }
+}
+
+.light {
+  position:absolute;
+  left: calc(8.5%);
+  top: calc(16.5%);
+  border-radius: 50%;
+  box-shadow: 
+  0 0 200px 120px rgba(255, 255, 255, 1),
+  0 0 100px 60px rgba(255, 255, 255, 0.6),
+  0 0 20px 10px rgba(255, 255, 255, .7),
+  0 0 30px 15px rgba(255, 255, 255, .9);
+  animation: flicker 1s infinite alternate;
+  /* background-color: white; */
+  /* width: 30px; */
+  /* height: 30px; */
+  /* border:2px solid red; */
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+.lanterne {
+  position: absolute;
+  left: 65%;
+  top: 75%;
+  transform: rotateZ(10deg);
+  /* border: 2px solid white; */
 }
 
 .identite span {

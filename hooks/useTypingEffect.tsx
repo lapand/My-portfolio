@@ -46,15 +46,15 @@ export function useTypingEffect(
         :
             <span 
                 key={i} 
-                style={{ opacity: '0' }}
-                ref={node => {
-                    // sauf espaces, les tabulations et les sauts de ligne
-                    if(node && node.textContent && !/^\s*$/.test(node.textContent)){
-                        // console.log(node)
-                        triggerFlyingLetters(node, interKeyStrokeDurationInMs, shootingStarRef);
-                        setTimeout(() => node.style.opacity = '1', interKeyStrokeDurationInMs);
-                    }
-                }}
+                // style={{ opacity: '0' }}
+                // ref={node => {
+                //     // sauf espaces, les tabulations et les sauts de ligne
+                //     if(node && node.textContent && !/^\s*$/.test(node.textContent)){
+                //         // console.log(node)
+                //         triggerFlyingLetters(node, interKeyStrokeDurationInMs, shootingStarRef);
+                //         setTimeout(() => node.style.opacity = '1', interKeyStrokeDurationInMs);
+                //     }
+                // }}
             >
                 {letter}
             </span>
