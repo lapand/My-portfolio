@@ -1,0 +1,7 @@
+.sectionSeparator {
+    width: var(--left-side-project-w);
+}
+
+.sectionName {
+    margin-top: 10px;
+}

@@ -1,0 +1,22 @@
+.menu {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    /* border:2px solid red; */
+    }
+    .menu li {
+    margin: 20px;
+    list-style: none;
+    }
+    .navLink {
+    background-color: inherit;
+    padding: 15px 15px 15px 30px;
+    border: none;
+    border-radius: 50px 0px 0 50px;
+    /* font-size: 1.4em; */
+    }
+    .navLink:hover {
+    box-shadow: 3px 3px 8px 2px;
+    cursor: pointer;
+    }

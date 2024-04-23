@@ -1,0 +1,71 @@
+.projectContainer {
+    width: 32%;
+    height: 5em;
+    border-radius: 20px;
+    padding: 4%;
+    background-color: #0D0D0D;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* border:2px solid purple; */
+}
+
+.top, .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border:2px solid rgb(0, 128, 49); */
+}
+
+.projectTitle {
+    font-family: var(--font-title);
+}
+
+.githubIcon {
+    width: 7%;
+    min-width: 25px;
+    /* border:2px solid rgb(0, 128, 49); */
+}
+
+.description {
+    width: 66.666%;
+    /* border:2px solid rgb(0, 128, 49); */
+}
+
+.stack {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    /* border:2px solid rgb(0, 128, 122); */
+}
+
+.techno {
+    border-radius: 20px;
+    padding: .2em .8em;
+    /* height: 1.2em; */
+    /* border:2px solid rgb(70, 128, 0); */
+}
+
+.toProject {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* gap: 8px; */
+    /* border:2px solid rgb(170, 0, 255); */
+}
+
+.externalLink {
+    display: inline-block;
+    width: 12%;
+    min-width: 20px;
+    margin-left: 5%;
+    vertical-align: sub;
+    /* border:2px solid blue; */
+}
+
+.active {
+    width: 80%;
+    height: auto;
+}

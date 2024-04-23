@@ -1,91 +1,127 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: flex-start; */
-  max-width: 100vw;
-  min-height: 100vh;
-  overflow: hidden;
-  /* border: 2px solid red; */
-  /* background: linear-gradient(to top right, #000000, #111111 60%, #292929); */
-  background-color: black;
+.homeContainer {
+    height: 100vh;
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:url("../public/tomahna2.png");
+    background-size:cover;
+    background-position: center center;
+    /* border: 2px solid red; */
 }
 
-.backgroundReveal {
-  position:absolute;
-  height: 100vh;
-  width: 100%;
-  background-image:url("../public/background.png");
-  background-size:cover;
-  background-position: center center;
-  mask-size: 200% 200%;
-  mask-position: 91% 82%;
-  mask-repeat: no-repeat;
-  mask-image: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, .9) 0%,
-    rgba(0, 0, 0, .8) 10%,
-    rgba(0, 0, 0, 0.4) 14%,
-    transparent 80%
-  );
-  animation: pulse 3s infinite alternate;
-  border:2px solid #ed5836;
+.homeContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    mask-size: 200% 200%;
+    mask-position: 35% 40%;
+    mask-repeat: no-repeat;
+    mask-image: radial-gradient(
+      circle at center,
+      /* #ffffff 0%,
+      transparent .5%, */
+      transparent 0%,
+      rgba(0, 0, 0, .4) 10%,
+      rgba(0, 0, 0, .6) 14%,
+      rgba(0, 0, 0, .8) 24%,
+      rgba(0, 0, 0, .9) 54%,
+      rgba(0, 0, 0, 1) 80%
+    );
+    z-index: 1;
+    animation: pulse 2s infinite alternate;
 }
 
 @keyframes pulse {
-  100% {
-    mask-size: 250% 250%;
-    mask-position: 76.5% 70%;
-  }
+    50% {
+        mask-size: 250% 250%;
+        mask-position: 40% 44%;
+    }
+    100% {
+        mask-size: 200% 200%;
+        mask-position: 35% 40%;
+    }
 }
 
+.homeContainer * {
+    position: relative;
+    z-index: 2;
+}
+
+.homeContent {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* border:2px solid rgb(255, 80, 214); */
+}
+
+.homeContent * {
+    text-align: center;
+    font-family: var(--font-tagline);
+}
+.tagline, .tagline * {
+    font-size: 3rem;
+}
+.job {
+    font-size: 1.8rem;
+}
+
+.lanterne {
+    position: absolute;
+    left: 86%;
+    top: 55%;
+    transform: rotateZ(10deg);
+    /* border: 2px solid white; */
+}
+  
 .light {
-  position:absolute;
-  left: calc(8.5%);
-  top: calc(16.5%);
-  border-radius: 50%;
-  box-shadow: 
-  0 0 200px 120px rgba(255, 255, 255, 1),
-  0 0 100px 60px rgba(255, 255, 255, 0.6),
-  0 0 20px 10px rgba(255, 255, 255, .7),
-  0 0 30px 15px rgba(255, 255, 255, .9);
-  animation: flicker 1s infinite alternate;
-  /* background-color: white;
-  width: 30px;
-  height: 30px;
-  border:2px solid red; */
+    position:absolute;
+    left: calc(89%);
+    top: calc(90%);
+    border-radius: 50%;
+    box-shadow: 
+    0 0 200px 120px rgba(255, 255, 255, .5),
+    0 0 100px 60px rgba(255, 255, 255, 0.6),
+    0 0 20px 10px rgba(255, 255, 255, .7),
+    0 0 10px 5px rgba(255, 255, 255, .9);
+    animation: flicker 1s infinite alternate;
+    /* background-color: white;
+    width: 30px;
+    height: 30px;
+    border:2px solid red; */
 }
 
 @keyframes flicker {
-  0% { opacity: 0.8; }
-  50% { opacity: 1; }
-  100% { opacity: 0.9; }
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
 }
 
-.move {
-  display: inline-block;
-  transition: height 0.5s, transform 0.5s;
-  animation: moveAndEnlarge 2s .5s forwards;
-}
 
-@keyframes moveAndEnlarge {
-  0% {
-    transform: translateY(0) scale(1);
+
+  .backgroundReveal {
+    position:absolute;
+    height: 100vh;
+    width: 100%;
+    background-image:url("../public/background.png");
+    background-size:cover;
+    background-position: center center;
+    mask-size: 200% 200%;
+    mask-position: 91% 82%;
+    mask-repeat: no-repeat;
+    mask-image: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, .9) 0%,
+      rgba(0, 0, 0, .8) 10%,
+      rgba(0, 0, 0, 0.4) 14%,
+      transparent 80%
+    );
+    animation: pulse 3s infinite alternate;
+    border:2px solid #ed5836;
   }
-  100% {
-    transform: translateY(-20px) scale(1.4);
-  }
-}
-
-/* @keyframes Sstarpulse {
-  0% {box-shadow: 0px 0px 0px 0px white;}
-  100% {box-shadow:0px 0px 8px 3px white;}
-} */
-
-.engrenagesCtn {
-  position: relative;
-  width: 5%;
-  top: 0;
-  left: 96%;
-  z-index:9999;
-}

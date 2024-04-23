@@ -1,26 +1,131 @@
-:root {
-  /* --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace; */
+  /***** Fonts *****/
+
+@font-face {
+  font-family: 'Londrina Solid';
+  src: url('../fonts/Londrina_Solid/LondrinaSolid-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} @font-face {
+  font-family: 'Londrina Solid';
+  src: url('../fonts/Londrina_Solid/LondrinaSolid-Light.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+} @font-face {
+  font-family: 'Londrina Solid';
+  src: url('../fonts/Londrina_Solid/LondrinaSolid-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+} @font-face {
+  font-family: 'Londrina Solid';
+  src: url('../fonts/Londrina_Solid/LondrinaSolid-Black.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Macondo Swash Caps';
+  src: url('../fonts/Macondo_Swash_Caps/MacondoSwashCaps-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Megrim';
+  src: url('../fonts/Megrim/Megrim-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.font1{
-  /* font-family: "MonteCarlo", serif; */
-  /* font-style: normal; */
-  /* letter-spacing: 0.1em; */
-  /* font-weight: 600; */
+:root {
+  --font-tagline: "Londrina Solid", sans-serif;
+  --font-title: "Megrim", system-ui;
+  --font-text: "Macondo Swash Caps", cursive;
 }
+
+  /***** Reset CSS *****/
 
 * {
-  font-family: "MonteCarlo", serif;
+  font-family: var(--font-text);
   font-size: 1.2rem;
+  font-weight: normal;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   color: #e0c097;
   user-select: none;
-  /* cursor: none; */
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+  /***** Colors : text - bg - border *****/
+
+.text-coral {
+  color: #D1654F;
+}
+.text-copper {
+  color: #B85C38;
+}
+.text-beige {
+  color: #E0C097;
+}
+.text-black {
+  color: #000000;
+}
+.bg-coral {
+  background-color: #D1654F;
+}
+.bg-copper {
+  background-color: #B85C38;
+}
+.bg-beige {
+  background-color: #E0C097;
+}
+.bg-black {
+  background-color: #000000;  
+}
+.bc-coral {
+  border-color: #D1654F;
+}
+.bc-copper {
+  border-color: #B85C38;
+}
+.bc-beige {
+  border-color: #E0C097;
+}
+.bc-black {
+  border-color: #000000;  
+}
+
+/* Font-sizes */
+
+.font-size0 {
+  font-size: .65rem;
+}
+.font-size1 {
+  font-size: .86rem;
+}
+.font-size2 {
+  font-size: .95rem;
+}
+.font-size3 {
+  font-size: 1.2rem;
+}
+.font-size4 {
+  font-size: 1.4rem;
+}
+.font-size5 {
+  font-size: 1.6rem;
+}
+.font-size6 {
+  font-size: 1.8rem;
+}
+
+/* Line-height */
+
+.space-line {
+  line-height: 1.5;
+}
+
 
 html,
 body {
@@ -28,19 +133,20 @@ body {
 }
 
 body {
-  /* background-image:url("../public/background.png"); */
-  /* background-size:cover; */
-  /* background-position: center center; */
   background-color: rgb(0, 0, 0);
-  /* background: linear-gradient(to top right, #000000, #111111 60%, #292929); */
-
   /* border: 2px solid yellow; */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+
+
+
+
+
+
+
+
+
+
 
 /* ::-webkit-scrollbar {
   width: 18px;
@@ -66,6 +172,12 @@ a {
 
 } */
 
+
+
+
+
+
+/* 
 .custom-scrollbars__container {
   background-color: rgb(0, 0, 0);
   border: 1px solid #333;
@@ -121,4 +233,4 @@ a {
   background-color: #333;
   position: absolute;
   width: 16px;
-}
+} */
