@@ -1,0 +1,20 @@
+.toggleSwitch {
+    background-color: transparent;
+    padding: 1%;
+    display: flex;
+    border: 2px solid #E0C097;
+    border-radius: 20px;
+}
+
+.languageBtn {
+    background-color: transparent;
+    border-style: none;
+    border-radius: 20px;
+    padding: .5em;
+}
+
+.active {
+    color: black;
+    font-weight: bold;
+    background-color: #B85C38;
+}

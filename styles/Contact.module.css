@@ -1,0 +1,125 @@
+.contactViewport {
+    height: 100vh;
+    padding: calc(var(--header-height) + var(--header-section-gap)) 5% 5%;
+    background-image: radial-gradient(to bottom, transparent 0%, transparent 85%, #B85C38 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    /* border: 2px solid red; */
+}
+
+.contactContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  /* border: 2px solid cyan; */
+}
+
+.linksContainer {
+    width: 25%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24%;
+    /* border: 2px solid rgb(0, 255, 132); */
+}
+
+/***** Bloc des éléments contact flottant *****/
+
+.contactItem{
+    --float-height: 80px; /* Hauteur jusqu'à laquelle flotte l'élément */
+    height: 2.8vw;
+    min-height: 40px;
+    position: relative;
+    /* border: 2px solid rgb(229, 255, 0); */
+}
+
+@keyframes float{
+    0% {
+        top: 0;
+    }
+    100% {
+        top: calc(var(--float-height) * -1);
+    }
+}
+
+.contactItem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 
+        0px 100px 25px 0px #B85C38;
+    border-radius: 50%;
+    transform: rotateX(50deg);
+    /* border: 2px solid rgb(229, 255, 0); */
+}
+
+@keyframes removeFloat1{
+    100% {
+        top: var(--float-height);
+    }
+}
+
+.contactItem::after {
+    --maxSize: 60%; /* Largeur de l'ombre noire (par rapport à celle de contactItem) lorsque l'image est en bas */
+    --minSize: 30%; /* Largeur de l'ombre noire (par rapport à celle de contactItem) lorsque l'image est en haut */
+    height: var(--maxSize);
+    width: var(--maxSize);
+    content: "";
+    position: absolute;
+    top: calc(50% - var(--maxSize)/2);
+    left: calc(50% - var(--maxSize)/2);
+    box-shadow: 
+        0px 100px 10px 0px rgba(0, 0, 0, .7);
+    border-radius: 50%;
+    transform: rotateX(50deg);
+    /* border: 2px solid rgb(229, 255, 0); */
+}
+
+@keyframes removeFloat2{
+    100% {
+        top: calc(50% - var(--minSize)/2 + var(--float-height));
+        left: calc(50% - var(--minSize)/2);
+        width: var(--minSize);
+        height: var(--minSize);
+    }
+}
+
+.item1 {
+    animation: float 5s ease-in-out 1s infinite alternate;
+}
+.item1::before {
+    animation: removeFloat1 5s ease-in-out 1s infinite alternate;
+}
+.item1::after {
+    animation: removeFloat2 5s ease-in-out 1s infinite alternate;
+}
+.item2 {
+    animation: float 5s ease-in-out 3s infinite alternate;
+}
+.item2::before {
+    animation: removeFloat1 5s ease-in-out 3s infinite alternate;
+}
+.item2::after {
+    animation: removeFloat2 5s ease-in-out 3s infinite alternate;
+}
+.item3 {
+    animation: float 5s ease-in-out infinite alternate;
+}
+.item3::before {
+    animation: removeFloat1 5s ease-in-out infinite alternate;
+}
+.item3::after {
+    animation: removeFloat2 5s ease-in-out infinite alternate;
+}
+
+/***** Fin du bloc des éléments contact flottant *****/

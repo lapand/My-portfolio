@@ -1,5 +1,5 @@
 .sectionSeparator {
-    width: var(--left-side-project-w);
+    width: var(--section-separator-w);
 }
 
 .sectionName {

@@ -3,11 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Main.module.css";
 import { useEffect, useState } from "react";
-import Fixed from '@/components/Fixed';
+import Header from '@/components/Header';
 import Home from '@/components/Home';
 import ProjectSection from '@/components/ProjectSection';
 import About from '@/components/About';
-import Contact from '@/components/About';
+import Contact from '@/components/Contact';
 import Scrollbar from "@/components/Scrollbar";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
@@ -55,7 +55,7 @@ export default function Main(): JSX.Element {
 
       <main className={styles.main}>
 
-        <Fixed />
+        <Header />
         <Element id="Home">
           <Home />
         </Element>
@@ -64,12 +64,12 @@ export default function Main(): JSX.Element {
             
           />
         </Element>
-        {/* <Element id="About">
+        <Element id="About">
           <About />
         </Element>
         <Element id="Contact">
           <Contact />
-        </Element> */}
+        </Element>
 
       </main>
       

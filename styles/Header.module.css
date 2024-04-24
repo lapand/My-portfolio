@@ -1,0 +1,39 @@
+.header {
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    /* padding: 10px 2%; */
+    padding: 10px 40px;
+    background-image: url('../public/header-background.svg');
+    background-size: auto 100%;
+    /* background-position: 0 0; */
+    background-repeat: no-repeat;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid rgb(46, 255, 60); */
+}
+
+.black-bg {
+  background-color: black;
+}
+
+.authorName {
+  font-family: var(--font-title);
+  font-size: clamp(1.8vw, 1.2em, 1.6em);
+  /* margin-left: 2.5%; */
+  margin-left: 55px;
+  position: relative;
+  top: 10px;
+  /* border: 2px solid white; */
+}
+
+.controlPanel {
+  width: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40%;
+  /* border: 2px solid orange; */
+}

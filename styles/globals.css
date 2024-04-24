@@ -34,10 +34,14 @@
   font-style: normal;
 }
 
+  /***** Header height & sections padding-top *****/
 :root {
   --font-tagline: "Londrina Solid", sans-serif;
   --font-title: "Megrim", system-ui;
   --font-text: "Macondo Swash Caps", cursive;
+  --header-height: 130px;
+  --header-section-gap: 60px;
+  --section-separator-w : 40%; /* Largeur du séparateur de section et de la section gauche */
 }
 
   /***** Reset CSS *****/
@@ -98,6 +102,9 @@ a {
 
 /* Font-sizes */
 
+.font-size00 {
+  font-size: .55rem;
+}
 .font-size0 {
   font-size: .65rem;
 }
@@ -123,9 +130,8 @@ a {
 /* Line-height */
 
 .space-line {
-  line-height: 1.5;
+  line-height: 1.6;
 }
-
 
 html,
 body {

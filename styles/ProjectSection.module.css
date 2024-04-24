@@ -1,7 +1,6 @@
 .projectViewport {
-    --left-side-project-w : 40%; /* Largeur de la section gauche */
     height: 100vh;
-    padding: 10rem 5% 5%;
+    padding: calc(var(--header-height) + var(--header-section-gap)) 5% 5%;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -16,7 +15,7 @@
 }
 
 .leftSide {
-  width: var(--left-side-project-w);
+  width: var(--section-separator-w);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
