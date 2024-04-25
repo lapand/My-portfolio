@@ -1,10 +1,7 @@
 .contactViewport {
     height: 100vh;
-    padding: calc(var(--header-height) + var(--header-section-gap)) 5% 5%;
-    background-image: radial-gradient(to bottom, transparent 0%, transparent 85%, #B85C38 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    padding: calc(var(--header-height) + var(--header-section-gap)) 5% 0;
+    background: linear-gradient(to bottom, transparent, transparent 85%, #B85C38);
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -60,6 +57,7 @@
         0px 100px 25px 0px #B85C38;
     border-radius: 50%;
     transform: rotateX(50deg);
+    pointer-events: none;
     /* border: 2px solid rgb(229, 255, 0); */
 }
 
@@ -82,6 +80,7 @@
         0px 100px 10px 0px rgba(0, 0, 0, .7);
     border-radius: 50%;
     transform: rotateX(50deg);
+    pointer-events: none;
     /* border: 2px solid rgb(229, 255, 0); */
 }
 
@@ -123,3 +122,26 @@
 }
 
 /***** Fin du bloc des éléments contact flottant *****/
+
+.footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerContent {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.copyrightContainer {
+    width: 5%;
+}
+
+.credits {
+    font-weight: bold;
+}

@@ -14,7 +14,13 @@
     right: 0;
     margin-top: 20px;
     border-right:1px solid #E0C097;
+    opacity: 0;
+    transition: opacity .4s ease;
     /* border:2px solid rgb(199, 20, 68); */
+}
+
+.visible {
+    opacity: 1;
 }
 
 .nav li {

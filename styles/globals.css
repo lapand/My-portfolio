@@ -60,6 +60,13 @@ a {
   color: inherit;
   text-decoration: none;
 }
+button {
+  background-color: transparent;
+  border-style: none;
+  display: inline-block;
+  vertical-align: sub;
+  cursor: pointer;
+}
 
   /***** Colors : text - bg - border *****/
 

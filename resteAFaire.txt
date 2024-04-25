@@ -1,0 +1,9 @@
+Rectifier l'effet d'ombre sur l'Accueil
+
+Augmenter la réso du background-image de l'accueil
+
+Rectifier la couleur des icones des projets
+
+Tester le site sur plusieurs navigateurs et responsive
+
+Lié le CV dans A propos

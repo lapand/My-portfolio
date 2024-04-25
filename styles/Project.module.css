@@ -21,7 +21,7 @@
     font-family: var(--font-title);
 }
 
-.githubIcon {
+.githubBtn {
     width: 7%;
     min-width: 25px;
     /* border:2px solid rgb(0, 128, 49); */
@@ -56,12 +56,12 @@
     /* border:2px solid rgb(170, 0, 255); */
 }
 
-.externalLink {
+.externalLinkImg {
     display: inline-block;
+    vertical-align: sub;
     width: 12%;
     min-width: 20px;
     margin-left: 5%;
-    vertical-align: sub;
     /* border:2px solid blue; */
 }
 
