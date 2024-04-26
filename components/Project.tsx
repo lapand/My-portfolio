@@ -1,13 +1,16 @@
 import styles from "@/styles/Project.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Project (): JSX.Element {
+
+    const [isProjectActive, setIsProjectActive] = useState(false);
 
     return (
         <div className={`${styles.projectContainer} ${styles.active}`}>
             <div className={styles.top}>
-                <h3 className={`${styles.projectTitle} font-size4`}>Amaia Carrere</h3>
+                <h3 className={`${styles.projectTitle} font-size4`}>Board Game Companion</h3>
                 <button className={styles.githubBtn}>
                     <Link href="">
                         <Image
