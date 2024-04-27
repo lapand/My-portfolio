@@ -1,23 +1,25 @@
 .projectContainer {
     width: 28%;
-    height: 4.5em;
-    border-radius: 20px;
-    padding: 2%;
+    padding: 1.1rem .38rem;
     background-color: #0D0D0D;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .5s ease;
+    background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(15, 15, 15));
     /* border:2px solid purple; */
 }
 
 .active {
     width: 80%;
-    height: auto;
     padding: 4%;
     flex-direction: column;
     align-items: stretch;
     gap: 1em;
+}
+
+.projectContainer:hover {
+    /* background-color: #080808; */
+    background-image: linear-gradient(to top left, rgb(5, 5, 5), rgb(15, 15, 15));
 }
 
 .top, .bottom {
@@ -47,16 +49,32 @@
 .stack {
     flex: 2;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 5%;
     /* border:2px solid rgb(0, 128, 122); */
 }
 
+/* La weigth de la font n'existe pas en bold et le navigateur l'a modélise trop épaisse.
+ * ::after prend le contenu textuel de .techno (présent dans l'attribut 
+ * data-text introduit dans Project.tsx) et épaissit légérement la police. */
 .techno {
+    --techno-vertical-padding: .2em;
+    --techno-horiz-padding: .8em;
     border-radius: 20px;
-    padding: .2em .8em;
-    /* height: 1.2em; */
+    padding: var(--techno-vertical-padding) var(--techno-horiz-padding);
+    white-space: nowrap;
+    margin-top: .6em;
+    position: relative;
     /* border:2px solid rgb(70, 128, 0); */
+}
+
+.techno::after {
+    content: attr(data-text);
+    color: #000;
+    position: absolute;
+    top: var(--techno-vertical-padding);
+    left: var(--techno-horiz-padding);
+    filter: blur(0);
 }
 
 .toProject {

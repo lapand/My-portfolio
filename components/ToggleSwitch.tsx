@@ -15,8 +15,13 @@ export default function ToggleSwitch ({style, width = '100%', ...rest }: ToggleS
 
     return(
         <div className={styles.toggleSwitch} style={combinedStyles} {...rest}>
-            <button className={`${styles.languageBtn} ${styles.active} font-size00`}>FR</button>
-            <button className={`${styles.languageBtn} font-size00`}>EN</button>
+            <div className={styles.languagesBloc}>
+                <button className={`${styles.btn} font-size00`}>FR</button>
+                <button className={`${styles.btn} font-size00`}>EN</button>
+            </div>
+            <div className={styles.btnBloc}>
+                <div className={`${styles.btn} ${styles.textDisappear} bg-copper font-size00`}>GG</div>
+            </div>
         </div>
     );
 }

@@ -1,18 +1,44 @@
 .toggleSwitch {
+    position: relative;
     background-color: transparent;
     padding: 1%;
     display: flex;
-    border: 2px solid #E0C097;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
+    /* border: 2px solid #E0C097; */
 }
 
-.languageBtn {
+.languagesBloc {
+    padding: 1%;
+    border-radius: 20px;
+    display: flex;
+    border: 2px solid #E0C097;
+}
+
+.btn {
     border-radius: 20px;
     padding: .5em;
+}
+
+.btnBloc {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    transition: transform .5s ease;
+    /* border: 2px solid #9ce097; */
+}
+
+.btnBloc:hover{
+    transform: translate(50%, 0%);
+}
+
+.textDisappear {
+    text-indent: -10000px;
 }
 
 .active {
     color: black;
     font-weight: bold;
-    background-color: #B85C38;
 }

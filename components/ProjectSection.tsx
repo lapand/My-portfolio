@@ -1,60 +1,76 @@
 import styles from '@/styles/ProjectSection.module.css';
 import SectionSeparator from './SectionSeparator';
-import { useState } from 'react';
-import Image from 'next/image';
+import { FC, PropsWithChildren, useState } from 'react';
 import Project from './Project';
+import { LayoutGroup } from 'framer-motion';
 
-// type ProjectProps = {
-//   id: string;
-// }
+type ProjectSectionProps = PropsWithChildren;
+type ProjectType = {
+  title: string,
+  content: string,
+  stack: string[],
+  githubLink?: string,
+  projectLink?: string,
+  videoUri?: string,
+}[];
 
-export default function ProjectSection(){
+const ProjectSection: FC<ProjectSectionProps> = () => {
 
-  const projects = [
-    {
-      title: "Amaia Carrere",
-      videoUri: "amaia-website2.mp4",
-      content: `Site vitrine d'une illustratrice et dessinatrice de bande-dessinées.`
-    },
+  const projects: ProjectType = [
     {
       title: "Board Game Companion",
       videoUri: "bgc3.mp4",
-      content: "Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis."
+      content: "Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis.",
+      stack: ["React-Native", "Expo", "Redux", "Node", "Express", "MongoDB"],
+      githubLink: "",
+      projectLink: "",
     },
     {
-      title: "Gestionnaire de planning",
+      title: "Mon portfolio",
       videoUri: "amaia-website.mp4",
-      content: "Application web pour la création et gestion de planning mensuel du personnel hospitalier."
+      content: "Celui-ci même !",
+      stack: ["React", "Next.js", "Framer-Motion"],
+      githubLink: "",
+      projectLink: "",
     },
+    {
+      title: "Amaia Carrere",
+      videoUri: "amaia-website2.mp4",
+      content: `Site vitrine d'une illustratrice de bandes dessinées.\n Statique - Responsive - SEO`,
+      stack: ["JS vanilla"],
+      githubLink: "",
+      projectLink: "https://www.amaia-carrere.com/",
+    },    
   ]
 
-  // const [reveal, setReveal] = useState(false);
+  const [activeProjectId, setActiveProjectId] = useState<Number | null>(null);
 
-  // function handleMouseMove(event) {
-  //   setReveal(true);
-  //   const bg = document.querySelector('.background');
-  //   if(bg){
-  //     const rect = bg.getBoundingClientRect();
-  //     const mouseX = event.clientX - rect.left;
-  //     const mouseY = event.clientY - rect.top;
-  //     const bgWidth = rect.width;
-  //     const bgHeight = rect.height;
-  //     bg.style.maskPosition = `${mouseX}px ${mouseY}px`;}
-  // }
+  const handleClickProject = (id: Number | null) => id !== activeProjectId ?
+      setActiveProjectId(id)
+    :
+      setActiveProjectId(null);
 
-  // function handleMouseLeave() {
-  //   setReveal(false);
-  // }
+
+  const projectsJSX = projects.map((project, i) => {
+    return (
+      <Project 
+        key={i} 
+        id={i} 
+        {...project} 
+        isActive={ i === activeProjectId ? true : false } 
+        onClick={handleClickProject} 
+      />
+    );
+  })
 
     return(
         <div className={styles.projectViewport}>
           <SectionSeparator sectionName="Projets" />
           <div className={styles.projectContainer}>
             <div className={styles.leftSide}>
-              <Project />
-              <Project />
-              <Project />
-              <Project />
+              <LayoutGroup>
+                {projectsJSX}
+              </LayoutGroup>
             </div>
             <div className={styles.rightSide}>
               <video 
@@ -73,3 +89,5 @@ export default function ProjectSection(){
         </div>
     );
 }
+
+export default ProjectSection;
