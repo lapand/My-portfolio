@@ -4,6 +4,8 @@ Augmenter la réso du background-image de l'accueil
 
 Rectifier la couleur des icones des projets
 
-Tester le site sur plusieurs navigateurs et responsive
+Tester le site sur plusieurs navigateurs
+Tester le responsive
+Tester le zoom
 
 Lié le CV dans A propos

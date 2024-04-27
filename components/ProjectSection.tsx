@@ -74,13 +74,13 @@ const ProjectSection: FC<ProjectSectionProps> = () => {
             </div>
             <div className={styles.rightSide}>
               <video 
-                src="/bgc-video.mp4"
+                src="/bgc.mp4"
                 className={styles.video} 
                 autoPlay={true} 
                 muted={true} 
                 loop={true}
               >
-                <source src="/bgc-video.mp4" type="video/mp4" />
+                <source src="/bgc.mp4" type="video/mp4" />
                 Votre navigateur ne permet pas de lire cette vidéo.
               </video>
             </div>

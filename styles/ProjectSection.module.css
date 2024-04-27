@@ -8,10 +8,10 @@
 }
 
 .projectContainer {
-  height:85%;
+  height:80%;
   display: flex;
   gap: 5%;
-  /* border: 2px solid cyan; */
+  /* border: 2px solid rgb(106, 7, 137); */
 }
 
 .leftSide {
