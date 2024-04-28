@@ -1,5 +1,5 @@
 .sectionSeparator {
-    width: var(--section-separator-w);
+    width: 25%;
 }
 
 .sectionName {

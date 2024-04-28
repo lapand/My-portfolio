@@ -91,7 +91,6 @@ const ProjectSection: FC<ProjectSectionProps> = () => {
               </AnimatePresence>
             </div>
           </div>
-          <hr className={`${styles.bottomSeparator} bc-beige`}/>
         </div>
     );
 }

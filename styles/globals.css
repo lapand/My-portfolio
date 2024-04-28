@@ -41,7 +41,6 @@
   --font-text: "Macondo Swash Caps", cursive;
   --header-height: 130px;
   --header-section-gap: 60px;
-  --section-separator-w : 40%; /* Largeur du séparateur de section et de la section gauche */
 }
 
   /***** Reset CSS *****/

@@ -57,18 +57,22 @@ export default function Main(): JSX.Element {
 
         <Header />
         <Element id="Home">
-          <Home />
+          <div className={styles.section}>
+            <Home />
+          </div>
         </Element>
         <Element id="ProjectSection">
-          <ProjectSection 
-            
-          />
+          <div className={styles.section}>
+            <ProjectSection />
+          </div>
         </Element>
         <Element id="About">
-          <About />
+          <div className={styles.section}>
+            <About />
+          </div>
         </Element>
         <Element id="Contact">
-          <Contact />
+            <Contact />
         </Element>
 
       </main>
