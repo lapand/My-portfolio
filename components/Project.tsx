@@ -38,7 +38,7 @@ export default function Project ({ id, onClick, isActive, title, content, stack,
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }}
                     >
-                        <Link href={githubLink}>
+                        <Link href={githubLink} target="_blank">
                             <Image
                                 src="/github-icon-brick.png"
                                 alt="github-icon"
@@ -73,7 +73,7 @@ export default function Project ({ id, onClick, isActive, title, content, stack,
                         {stackJSX}
                     </div>
                     <button className={styles.toProject}>
-                        <Link href={projectLink} className="font-size1 text-copper">
+                        <Link href={projectLink} target="_blank" className="font-size1 text-copper">
                             Vers le projet
                             <Image 
                                 src="/external-link-arrow.png" 
