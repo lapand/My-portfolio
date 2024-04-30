@@ -1,0 +1,36 @@
+.skillsViewport {
+    height: 160vh;
+    padding: calc(var(--header-height) + var(--header-section-gap)) 5% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    /* border: 2px solid rgb(26, 255, 0); */
+}
+
+.skillsContainer {
+    width: 90%;
+    height:80%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30%;
+    /* border: 2px solid rgb(106, 7, 137); */
+}
+
+.cvBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cvBtn {
+    padding: 0.8rem;
+    border-radius: .8rem;
+    background-image: linear-gradient(to top left, #B85C38, #522919);
+    color: black;
+    box-shadow: 2px 4px 4px 0 rgba(255, 255, 255, 0.25);
+}
+
+.cvBtn:hover {
+    background-image: linear-gradient(to bottom right, #B85C38, #522919);
+}

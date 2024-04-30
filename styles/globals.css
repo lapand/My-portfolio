@@ -149,7 +149,7 @@ body {
 /***** Scrollbar customisation (except on firefox) *****/
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -157,7 +157,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(to top, rgb(224, 192, 151) 0%, rgb(13, 13, 13) 100%);
+  background-color: rgb(224, 192, 151);
   border-radius: 10px;
 }
 

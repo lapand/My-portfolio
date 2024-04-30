@@ -10,6 +10,7 @@ import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Scrollbar from "@/components/Scrollbar";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import Skills from "@/components/Skills";
 
 export default function Main(): JSX.Element {
 
@@ -64,6 +65,11 @@ export default function Main(): JSX.Element {
         <Element id="ProjectSection">
           <div className={styles.section}>
             <ProjectSection />
+          </div>
+        </Element>
+        <Element id="Skills">
+          <div className={styles.section}>
+            <Skills />
           </div>
         </Element>
         <Element id="About">

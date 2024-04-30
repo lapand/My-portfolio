@@ -56,6 +56,17 @@ export default function Menu (): JSX.Element {
           </li>
           <li>
             <Link 
+                className={`${styles.navLink} font-size1`} 
+                to="Skills" 
+                smooth={true} 
+                duration={800} 
+                onClick={() => scrollToSection("Skills")}
+              >
+              Compétences
+            </Link>
+          </li>
+          <li>
+            <Link 
               className={`${styles.navLink} font-size1`} 
               to="About" 
               smooth={true} 

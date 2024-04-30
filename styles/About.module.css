@@ -3,35 +3,16 @@
     padding: calc(var(--header-height) + var(--header-section-gap)) 5% 5%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    /* border: 2px solid red; */
+    gap: 100px;
+    border: 2px solid red;
 }
 
 .aboutContainer {
+    width: 90%;
     height:85%;
-    display: flex;
-    gap: 5%;
-    /* border: 2px solid cyan; */
-}
-
-.leftSegment, .rightSegment {
-    width: 40%;
-    text-align: center;
+    align-self: center;
     display: flex;
     flex-direction: column;
-    gap: 4em;
-    /* border: 2px solid rgb(81, 0, 255); */
-}
-
-.centerSegment {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    /* border: 2px solid rgb(210, 3, 228); */
-}
-
-.videoContainer {
-    display: flex;
-    justify-content: center;
-    /* border: 2px solid rgb(255, 94, 0); */
+    gap: 30%;
+    border: 2px solid cyan;
 }

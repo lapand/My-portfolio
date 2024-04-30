@@ -24,20 +24,20 @@ const projects: ProjectType = [
     projectLink: "",
   },
   {
-    title: "Mon portfolio",
-    videoUri: "",
-    content: "Celui-ci même !",
-    stack: ["React", "Next.js", "Framer-Motion"],
-    githubLink: "",
-    projectLink: "",
-  },
-  {
     title: "Amaia Carrere",
     videoUri: "amaia.mp4",
     content: `Site vitrine d'une illustratrice de bandes dessinées.\n Statique - Responsive - SEO`,
     stack: ["JS vanilla"],
     githubLink: "",
     projectLink: "https://www.amaia-carrere.com/",
+  },  
+  {
+    title: "Mon portfolio",
+    videoUri: "",
+    content: "Celui-ci même !",
+    stack: ["React", "Next.js", "Framer-Motion"],
+    githubLink: "",
+    projectLink: "",
   },
 ]
 
