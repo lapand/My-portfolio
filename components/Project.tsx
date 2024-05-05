@@ -24,7 +24,7 @@ export default function Project ({
     ))
 
     return (
-        <motion.button 
+        <motion.div 
             layout 
             transition={{layout: { duration: 1, type: "spring" }}} 
             onClick={() => onClick(id)} 
@@ -46,14 +46,14 @@ export default function Project ({
                         className={styles.githubBtn} 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }}
-                        whileHover={{ scale: 1.4 }}
+                        whileHover={{ scale: 1.2 }}
                     >
                         <Link href={githubLink} target="_blank">
                             <Image
                                 src="/github-icon-brick.png"
                                 alt="github-icon"
-                                width={60}
-                                height={120}
+                                width={200}
+                                height={200}
                                 style={{
                                     width: '100%',
                                     height: 'auto',
@@ -110,7 +110,7 @@ export default function Project ({
                     }
                 </motion.div>
             }
-        </motion.button>
+        </motion.div>
     );
 
 }

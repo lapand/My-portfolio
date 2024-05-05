@@ -45,7 +45,7 @@ export default function Menu (): JSX.Element {
             animate={{
               translateX: isMenuHovering ? "100%" : "0%",
             }}
-            transition={{ duration: .5 }}
+            transition={{ duration: .4 }}
           ></motion.div>
           <motion.div 
             className={`${styles.midIcon} ${styles.iconPart}`}
@@ -59,7 +59,7 @@ export default function Menu (): JSX.Element {
             animate={{
               translateX: isMenuHovering ? "-100%" : "0%",
             }}
-            transition={{ duration: .5 }}
+            transition={{ duration: .4 }}
           ></motion.div>
         </motion.button>
         <ul className={`${styles.nav} ${isMenuVisible ? styles.visible : ''}`}>

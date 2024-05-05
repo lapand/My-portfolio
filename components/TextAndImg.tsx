@@ -65,8 +65,8 @@ export default function TextAndImg ({
                         <Image 
                             src={imgUri}
                             alt={imgAlt}
-                            width={500}
-                            height={500}
+                            width={1000}
+                            height={1000}
                             style={{
                                 width: "100%",
                                 height:"auto",

@@ -1,11 +1,26 @@
-Rectifier l'effet d'ombre sur l'Accueil
+Obligatoire :
 
-Augmenter la réso du background-image de l'accueil
+	=> Changement de langue avec i18Next
 
-Rectifier la couleur des icones des projets
+	=> Balises <strong> pour le référencement
 
-Tester le site sur plusieurs navigateurs
-Tester le responsive
-Tester le zoom
+	=> Modifier la sémentique des balises pour le référencement (<section><header><footer>)
 
-Lié le CV dans A propos
+	=> Bouton scroll section
+
+	=> Appuyer sur TAB pour contrôler l'accessibilité des boutons
+
+	=> Changer la favicon.ico
+
+
+Facultatif :
+
+	=> Augmenter la réso du background-image de l'accueil
+
+	=> Image projet portfolio
+
+	=> Animation rouages scroll
+
+	=> Animation sur <ul> à l'ouverture/fermeture du menu
+
+	=> Indiquer la section actuelle sur le menu

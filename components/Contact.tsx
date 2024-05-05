@@ -18,8 +18,8 @@ export default function Contact (): JSX.Element {
                         <Image 
                             src="/email-brick.png"
                             alt="email"
-                            width={50}
-                            height={50}
+                            width={300}
+                            height={300}
                             style={{
                                 width:"auto",
                                 height:"100%",
@@ -32,8 +32,8 @@ export default function Contact (): JSX.Element {
                             <Image 
                                 src="/linkedin-brick2.png"
                                 alt="email"
-                                width={50}
-                                height={50}
+                                width={300}
+                                height={300}
                                 style={{
                                     width:"auto",
                                     height:"100%",
@@ -47,8 +47,8 @@ export default function Contact (): JSX.Element {
                             <Image 
                                 src="/github-icon-brick.png"
                                 alt="email"
-                                width={50}
-                                height={50}
+                                width={300}
+                                height={300}
                                 style={{
                                     width:"auto",
                                     height:"100%",

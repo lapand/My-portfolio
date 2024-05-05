@@ -20,15 +20,15 @@ const projects: ProjectType = [
     videoUri: "bgc.mp4",
     content: "Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis.",
     stack: ["React-Native", "Expo", "Redux", "Node", "Express", "MongoDB"],
-    githubLink: "",
-    projectLink: "",
+    githubLink: "a",
+    projectLink: "a",
   },
   {
     title: "Amaia Carrere",
     videoUri: "amaia.mp4",
     content: `Site vitrine d'une illustratrice de bandes dessinées.\n Statique - Responsive - SEO`,
     stack: ["JS vanilla"],
-    githubLink: "",
+    githubLink: "a",
     projectLink: "https://www.amaia-carrere.com/",
   },  
   {
@@ -72,23 +72,25 @@ const ProjectSection: FC<ProjectSectionProps> = () => {
               </LayoutGroup>
             </div>
             <div className={styles.rightSide}>
-              <AnimatePresence>
-                {activeProjectId !== null &&
-                  <motion.video 
-                    src={projects[activeProjectId].videoUri}
-                    className={styles.video} 
-                    autoPlay={true} 
-                    muted={true} 
-                    loop={true}
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }} 
-                  >
-                    <source src={projects[activeProjectId].videoUri} type="video/mp4" />
-                    Votre navigateur ne permet pas de lire cette vidéo.
-                  </motion.video>
-                }
-              </AnimatePresence>
+              <div className={styles.videoContainer}>
+                <AnimatePresence>
+                  {activeProjectId !== null &&
+                    <motion.video 
+                      src={projects[activeProjectId].videoUri}
+                      className={styles.video} 
+                      autoPlay={true} 
+                      muted={true} 
+                      loop={true}
+                      initial={{ opacity: 0 }} 
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }} 
+                    >
+                      <source src={projects[activeProjectId].videoUri} type="video/mp4" />
+                      Votre navigateur ne permet pas de lire cette vidéo.
+                    </motion.video>
+                  }
+                </AnimatePresence>
+              </div>
             </div>
           </div>
         </div>

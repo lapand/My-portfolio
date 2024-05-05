@@ -54,12 +54,17 @@
 }
 
 .homeContent {
-    width: clamp(80vw, 40%, 100vw);
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
     /* border:2px solid rgb(255, 80, 214); */
+}
+@media screen and (max-width: 1000px) {
+    .homeContent {
+        width: 80%;
+    }
 }
 
 .homeContent * {
@@ -69,16 +74,14 @@
 
 .lanterne {
     position: absolute;
-    /* left: 86%; */
     left: -10px;
-    /* top: 55%; */
     top: -10px;
     transform: rotateZ(-5deg);
     transform-origin: top center;
-    /* border: 2px solid white; */
     animation: swing 6s ease-in-out infinite;
     pointer-events: none;
     min-width: 150px;
+    /* border: 2px solid white; */
 }
 
 @keyframes swing {
@@ -95,25 +98,16 @@
   
 .light {
     position:absolute;
-    /* left: calc(89%); */
-    /* top: calc(90%); */
     left: 5%;
     top: 25%;
     border-radius: 50%;
     box-shadow: 
-    /* 0 0 200px 120px rgba(255, 255, 255, .5), */
     0 0 200px 120px rgba(224, 192, 151, .5),
-    /* 0 0 100px 60px rgba(255, 255, 255, 0.6), */
     0 0 100px 60px rgba(224, 192, 151, 0.6),
-    /* 0 0 20px 10px rgba(255, 255, 255, .7), */
     0 0 20px 10px rgba(224, 192, 151, .7),
-    /* 0 0 10px 5px rgba(255, 255, 255, .9); */
     0 0 10px 5px rgba(224, 192, 151, .9);
     animation: flicker 1s infinite alternate;
-    /* background-color: white;
-    width: 30px;
-    height: 30px;
-    border:2px solid red; */
+    /* border:2px solid red; */
 }
 
 @keyframes flicker {
@@ -121,26 +115,3 @@
     50% { opacity: 1; }
     100% { opacity: 0.9; }
 }
-
-
-
-  /* .backgroundReveal {
-    position:absolute;
-    height: 100vh;
-    width: 100%;
-    background-image:url("../public/background.png");
-    background-size:cover;
-    background-position: center center;
-    mask-size: 200% 200%;
-    mask-position: 91% 82%;
-    mask-repeat: no-repeat;
-    mask-image: radial-gradient(
-      circle at center,
-      rgba(0, 0, 0, .9) 0%,
-      rgba(0, 0, 0, .8) 10%,
-      rgba(0, 0, 0, 0.4) 14%,
-      transparent 80%
-    );
-    animation: pulse 3s infinite alternate;
-    border:2px solid #ed5836;
-  } */

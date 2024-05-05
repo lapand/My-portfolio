@@ -38,7 +38,7 @@ const sections: skillSections = [
         ],
         imgUri: "/codeur.png",
         imgAlt: "developer working on computer",
-        assetWidth: "80%",
+        assetWidth: "100%",
     },
     {
         activityDomain: "Secteur paramédical",
@@ -50,7 +50,7 @@ const sections: skillSections = [
         skills: ["Communication", "Travail d'équipe", "Autonomie", "Adaptabilité", "Rigueur"],
         imgUri: "/irm.png",
         imgAlt: "IRM machine",
-        assetWidth: "80%",
+        assetWidth: "100%",
         isHorizontalSwitch: true,
     },
 ]

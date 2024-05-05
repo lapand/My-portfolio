@@ -1,23 +1,15 @@
 import styles from '@/styles/Home.module.css';
 import Image from 'next/image';
 
-// type HomeSectionProps = {
-//     id: string;
-// }
-
 export default function Home(): JSX.Element {
-
 
     return(
       <div className={ styles.homeContainer }>
-        {/* <div className={styles.backgroundReveal}>
-          <div className={styles.light}></div>
-        </div> */}
         <div className={ styles.homeContent }>
           <p className="font-size5">
-            <span className="text-coral font-size5" >Plongez</span> dans ma toile,<br/> tissée de code et de possibilités
+            <span className="text-coral font-size5" >Plongez</span> dans ma toile,<br/> tissée de code et de passion.
           </p>
-          <h2 className="font-size41">
+          <h2 className="font-size41" style={{ alignSelf: "flex-end" }}>
               Développeur web & mobile
           </h2>
         </div>
