@@ -4,7 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Project ({ id, onClick, isActive, title, content, stack, githubLink, projectLink }): JSX.Element {
+export default function Project ({ 
+    id, 
+    onClick, 
+    isActive, 
+    title, 
+    content, 
+    stack, 
+    githubLink, 
+    projectLink 
+}): JSX.Element {
 
     const formattedContent = content.split('\n').map((slice, i) => {
         return <span key={i} className="font-size1">{slice}<br/></span>
@@ -32,11 +41,12 @@ export default function Project ({ id, onClick, isActive, title, content, stack,
                 >
                     {title}
                 </motion.h3>
-                {isActive &&
+                {(isActive && githubLink !== "") &&
                     <motion.button 
                         className={styles.githubBtn} 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }}
+                        whileHover={{ scale: 1.4 }}
                     >
                         <Link href={githubLink} target="_blank">
                             <Image
@@ -72,14 +82,23 @@ export default function Project ({ id, onClick, isActive, title, content, stack,
                     <div className={styles.stack}>
                         {stackJSX}
                     </div>
-                    <button className={styles.toProject}>
-                        <Link href={projectLink} target="_blank" className="font-size1 text-copper">
-                            Vers le projet
+                    {projectLink !== "" &&
+                    <button className={styles.toProjectBtn}>
+                        <Link 
+                            href={projectLink} 
+                            target="_blank" 
+                            className={styles.projectLink} 
+                        >
+                            <p 
+                                className={`${styles.toProject} font-size1 text-copper`}
+                            >
+                                Vers le projet
+                            </p>
                             <Image 
                                 src="/external-link-arrow.png" 
                                 alt="lien externe"
-                                width={20}
-                                height={20}
+                                width={50}
+                                height={50}
                                 style={{
                                     width: '12%',
                                     height: 'auto',
@@ -88,6 +107,7 @@ export default function Project ({ id, onClick, isActive, title, content, stack,
                             />
                         </Link>
                     </button>
+                    }
                 </motion.div>
             }
         </motion.button>

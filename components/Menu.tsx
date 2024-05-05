@@ -1,36 +1,67 @@
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import styles from "@/styles/Menu.module.css";
 import Image from "next/image";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+
+// const liNames = ["Accueil", "Projets", "Compétences", "A propos", "Contact"];
 
 export default function Menu (): JSX.Element {
 
-    // Définir une fonction pour gérer le clic sur un lien du menu
     const scrollToSection = (sectionId: string) => {
       scroller.scrollTo(sectionId, {
-      duration: 800, // durée de la transition en millisecondes
-      delay: 0, // délai avant le début de la transition en millisecondes
-      smooth: 'easeInOutQuart' // type de transition
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart'
       });
     };
 
     const [isMenuVisible, setIsMenuVisible] = useState(false);
+    const [isMenuHovering, setIsMenuHovering] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+    // const [liHovering, setLiHovering] = useState<Number | null>(null);
+
+    const handleClick = () => {
+      setIsMenuVisible(isMenuVisible => !isMenuVisible);
+      setIsClicked(isClicked => !isClicked);
+    }
+
+    // const handleLiHover = (index) => {
+    //   setLiHovering
+    // }
 
     return(
       <div className={styles.menu}>
-        <button className={styles.menuIcon} onClick={() => setIsMenuVisible(!isMenuVisible)}>
-          <Image 
-            src="/menu.png" 
-            alt="menu icon"
-            width={20}
-            height={20}
-            style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block'
+        <motion.button 
+          className={styles.menuIcon} 
+          onClick={handleClick}
+          onHoverStart={() => setIsMenuHovering(true)}
+          onHoverEnd={() => setIsMenuHovering(false)}
+          animate={{ rotate: isClicked ? 90 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div 
+            className={`${styles.topIcon} ${styles.iconPart}`}
+            animate={{
+              translateX: isMenuHovering ? "100%" : "0%",
             }}
-          />
-        </button>
+            transition={{ duration: .5 }}
+          ></motion.div>
+          <motion.div 
+            className={`${styles.midIcon} ${styles.iconPart}`}
+            animate={{
+              borderColor: isClicked ? "#D1654F" : "#E0C097",
+            }}
+            transition={{ duration: .5 }}
+          ></motion.div>
+          <motion.div 
+            className={`${styles.botIcon} ${styles.iconPart}`}
+            animate={{
+              translateX: isMenuHovering ? "-100%" : "0%",
+            }}
+            transition={{ duration: .5 }}
+          ></motion.div>
+        </motion.button>
         <ul className={`${styles.nav} ${isMenuVisible ? styles.visible : ''}`}>
           <li>
             <Link 

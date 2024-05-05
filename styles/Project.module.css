@@ -6,19 +6,18 @@
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to bottom right, rgb(7, 7, 7), rgb(15, 15, 15));
-    /* border:2px solid purple; */
+    border:2px solid purple;
 }
 
 .active {
-    width: 80%;
-    padding: 4%;
+    width: 100%;
+    padding: 1em;
     flex-direction: column;
     align-items: stretch;
     gap: 1em;
 }
 
 .projectContainer:hover {
-    /* background-color: #080808; */
     background-image: linear-gradient(to top left, rgb(5, 5, 5), rgb(15, 15, 15));
 }
 
@@ -36,21 +35,23 @@
 }
 
 .githubBtn {
-    width: 7%;
+    width: 8%;
     min-width: 25px;
+    margin-left: .8em;
     /* border:2px solid rgb(0, 128, 49); */
 }
 
 .description {
     width: 66.666%;
+    text-align: left;
     /* border:2px solid rgb(0, 128, 49); */
 }
 
 .stack {
-    flex: 2;
+    max-width: 60%;
     display: flex;
     flex-wrap: wrap;
-    gap: 5%;
+    gap: .5em;
     /* border:2px solid rgb(0, 128, 122); */
 }
 
@@ -63,7 +64,6 @@
     border-radius: 20px;
     padding: var(--techno-vertical-padding) var(--techno-horiz-padding);
     white-space: nowrap;
-    margin-top: .6em;
     position: relative;
     /* border:2px solid rgb(70, 128, 0); */
 }
@@ -77,18 +77,42 @@
     filter: blur(0);
 }
 
-.toProject {
-    flex: 1;
+.toProjectBtn {
+    margin-left: .8em;
+    align-self: flex-end;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* gap: 8px; */
     /* border:2px solid rgb(170, 0, 255); */
+}
+
+.projectLink {
+    display: flex;
+    justify-content: flex-end;
+    /* border:2px solid red; */
+}
+
+.toProject {
+    position: relative;
+}
+
+.toProject::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #B85C38;
+    transition: width .2s ease-in-out;
+}
+
+.toProject:hover::after {
+    width: 100%;
 }
 
 .externalLinkImg {
     display: inline-block;
-    vertical-align: sub;
     width: 12%;
     min-width: 20px;
     margin-left: 5%;

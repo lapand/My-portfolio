@@ -11,7 +11,7 @@
   height:80%;
   display: flex;
   gap: 5%;
-  /* border: 2px solid rgb(106, 7, 137); */
+  border: 2px solid rgb(106, 7, 137);
 }
 
 .leftSide {
@@ -22,8 +22,22 @@
   flex-direction: column;
   gap: 30px;
   border-bottom: 1px solid rgb(15, 15, 15);
-  /* border: 2px solid cyan; */
+  border: 2px solid cyan;
 }
+
+@media screen and (max-width: 1000px) {
+  .projectContainer {
+    flex-direction: column;
+  }
+  .leftSide {
+    /* min-width: 1000px; */
+    width: 100%;
+    overflow: auto;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
 .rightSide {
   flex: 1;
   display: flex;
@@ -31,7 +45,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  /* border: 2px solid red; */
+  border: 2px solid red;
 }
 
 /* Diaphragme la vidéo */

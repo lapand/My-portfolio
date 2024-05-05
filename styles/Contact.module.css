@@ -121,6 +121,10 @@
     animation: removeFloat2 5s ease-in-out infinite alternate;
 }
 
+.contactItem img:hover {
+    opacity: .8;
+}
+
 /***** Fin du bloc des éléments contact flottant *****/
 
 .footer {
@@ -143,5 +147,19 @@
 }
 
 .credits {
-    font-weight: bold;
+    position: relative;
+    --techno-vertical-padding: .2em;
+    --techno-horiz-padding: .8em;
+    padding: var(--techno-vertical-padding) var(--techno-horiz-padding);
+    border-radius: 1em;
+    white-space: nowrap;
+}
+
+.credits::after {
+    content: attr(data-text);
+    position: absolute;
+    top: var(--techno-vertical-padding);
+    left: var(--techno-horiz-padding);
+    filter: blur(0);
+    /* border:2px solid rgb(70, 128, 0); */
 }

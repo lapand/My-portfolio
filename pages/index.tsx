@@ -8,7 +8,6 @@ import Home from '@/components/Home';
 import ProjectSection from '@/components/ProjectSection';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
-import Scrollbar from "@/components/Scrollbar";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import Skills from "@/components/Skills";
 
@@ -58,27 +57,19 @@ export default function Main(): JSX.Element {
 
         <Header />
         <Element id="Home">
-          <div className={styles.section}>
-            <Home />
-          </div>
+          <Home />
         </Element>
         <Element id="ProjectSection">
-          <div className={styles.section}>
-            <ProjectSection />
-          </div>
+          <ProjectSection />
         </Element>
         <Element id="Skills">
-          <div className={styles.section}>
-            <Skills />
-          </div>
+          <Skills />
         </Element>
         <Element id="About">
-          <div className={styles.section}>
-            <About />
-          </div>
+          <About />
         </Element>
         <Element id="Contact">
-            <Contact />
+          <Contact />
         </Element>
 
       </main>

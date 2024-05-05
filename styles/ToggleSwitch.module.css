@@ -18,7 +18,7 @@
 .language {
     border-radius: 20px;
     padding: .5em;
-    /* border: .5px solid #c73fb2; */
+    /* border: .5px solid #9cc73f; */
 }
 
 .active {
@@ -46,6 +46,7 @@
     width: 50%;
     border-radius: 20px;
     padding: .5em;
-    background-color: brown;
+    aspect-ratio: 1;
+    background-color: #D1654F;
     /* border: 1px solid #b11330; */
 }

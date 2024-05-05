@@ -4,28 +4,31 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Contact (): JSX.Element {
+
+    const handleClickSendMail = () => {
+        window.open('mailto:lapand@hotmail.fr?subject=&body=');
+    }
+
     return(
         <div className={styles.contactViewport}>
             <SectionSeparator sectionName="Contact" />
             <div className={styles.contactContainer}>
                 <div className={styles.linksContainer}>
-                    <button className={`${styles.contactItem} ${styles.item1}`}>
-                        <Link href="">
-                            <Image 
-                                src="/email-brick.png"
-                                alt="email"
-                                width={50}
-                                height={50}
-                                style={{
-                                    width:"auto",
-                                    height:"100%",
-                                    display:"block",
-                                }}
-                            />
-                        </Link>
+                    <button onClick={handleClickSendMail} className={`${styles.contactItem} ${styles.item1}`}>
+                        <Image 
+                            src="/email-brick.png"
+                            alt="email"
+                            width={50}
+                            height={50}
+                            style={{
+                                width:"auto",
+                                height:"100%",
+                                display:"block",
+                            }}
+                        />
                     </button>
                     <button className={`${styles.contactItem} ${styles.item2}`}>
-                        <Link href="">
+                        <Link href="https://fr.linkedin.com/in/andoni-laporte-7b579429a" target="_blank">
                             <Image 
                                 src="/linkedin-brick2.png"
                                 alt="email"
@@ -40,7 +43,7 @@ export default function Contact (): JSX.Element {
                         </Link>
                     </button>
                     <button className={`${styles.contactItem} ${styles.item3}`}>
-                        <Link href="">
+                        <Link href="https://github.com/lapand" target="_blank">
                             <Image 
                                 src="/github-icon-brick.png"
                                 alt="email"
@@ -71,7 +74,11 @@ export default function Contact (): JSX.Element {
                             }}                    
                         />
                     </div>
-                    <p className={`${styles.credits} text-black font-size2`}>2024 - Andoni Laporte</p>
+                    <p 
+                        className={`${styles.credits} text-black font-size2`} 
+                        data-text="2024 - Andoni Laporte">
+                            2024 - Andoni Laporte
+                    </p>
                 </div>
             </footer>
         </div>

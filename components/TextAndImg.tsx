@@ -33,14 +33,15 @@ export default function TextAndImg ({
 
     return (
         <div 
-            className={styles.container} 
-            style={{ flexDirection: isHorizontalSwitch ? "row-reverse" : "row" }}
+            className={`${styles.container} ${isHorizontalSwitch ? styles.reverse : ""}`} 
         >
             <div 
                 className={styles.descriptionContainer}
             >
                 <div className={styles.description}>
-                    <h4 className={styles.activityDomain}>{activityDomain}</h4>
+                    {activityDomain && 
+                        <h4 className={styles.activityDomain}>{activityDomain}</h4>
+                    }
                     <p>{formattedDescription}</p>
                     {(skillCards && skillCards.length !== 0) &&
                         <div 

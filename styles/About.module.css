@@ -1,18 +1,17 @@
 .aboutViewport {
-    height: 100vh;
     padding: calc(var(--header-height) + var(--header-section-gap)) 5% 5%;
     display: flex;
     flex-direction: column;
     gap: 100px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .aboutContainer {
     width: 90%;
-    height:85%;
     align-self: center;
     display: flex;
     flex-direction: column;
-    gap: 30%;
-    border: 2px solid cyan;
+    align-items: center;
+    gap: 10rem;
+    /* border: 2px solid cyan; */
 }

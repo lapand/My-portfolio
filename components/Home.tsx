@@ -14,25 +14,25 @@ export default function Home(): JSX.Element {
           <div className={styles.light}></div>
         </div> */}
         <div className={ styles.homeContent }>
-          <p className={ styles.tagline }>
-            <span className="text-coral" >Plongez</span> dans ma toile,<br/> tissée de code et de possibilités
+          <p className="font-size5">
+            <span className="text-coral font-size5" >Plongez</span> dans ma toile,<br/> tissée de code et de possibilités
           </p>
-          <h2 className={ styles.job }>
+          <h2 className="font-size41">
               Développeur web & mobile
           </h2>
-          <Image
-            src="/lanterne.png"
+        </div>
+        {/* <div className={styles.light}></div> */}
+        <Image
+            src="/lanterne2.png"
             alt="lanterne"
-            width={60}
-            height={120}
+            width={500}
+            height={500}
             style={{
-              width: '7%',
+              width: '10%',
               height: 'auto',
             }}
             className={styles.lanterne}
-          />
-          <div className={styles.light}></div>
-        </div>
+        />
       </div>
     );
 }
