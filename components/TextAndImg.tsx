@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FC, PropsWithChildren } from "react";
 import SkillCard from "./SkillCard";
+import { useTranslation } from "react-i18next";
 
 export default function TextAndImg ({ 
     imgUri, 

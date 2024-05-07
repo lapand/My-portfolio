@@ -1,6 +1,7 @@
 import { CSSProperties, useState } from 'react';
 import styles from '@/styles/ToggleSwitch.module.css';
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 type ToggleSwitchProps = {
     style?: CSSProperties;
@@ -16,7 +17,8 @@ const spring = {
 export default function ToggleSwitch ({style, width = '100%', ...rest }: ToggleSwitchProps): JSX.Element {
 
     const [toggle, setToggle] = useState(false);
-
+    const { i18n } = useTranslation();
+    
     const combinedStyles: CSSProperties = {
         ...style,
         width,
@@ -24,6 +26,10 @@ export default function ToggleSwitch ({style, width = '100%', ...rest }: ToggleS
 
     const handleToggle = () => {
         setToggle(toggle => !toggle);
+        toggle ?
+            i18n.changeLanguage('fr')
+        :
+            i18n.changeLanguage('en');
     }
 
     return (

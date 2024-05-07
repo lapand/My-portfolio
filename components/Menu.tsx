@@ -1,12 +1,34 @@
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import styles from "@/styles/Menu.module.css";
-import Image from "next/image";
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from "react-i18next";
 
-// const liNames = ["Accueil", "Projets", "Compétences", "A propos", "Contact"];
+const sectionNames: string[] = ["Home", "ProjectSection", "Skills", "About", "Contact"];
 
 export default function Menu (): JSX.Element {
+
+    const [isMenuVisible, setIsMenuVisible] = useState(false);
+    const [isMenuHovering, setIsMenuHovering] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+    const { t } = useTranslation();
+    const menuArray: string[] = t('menu', { returnObjects: true }) as string[];
+
+    const liJSX = menuArray.map((item, index) => {
+      return(
+        <li>
+          <Link 
+            className={`${styles.navLink} font-size1`} 
+            to={sectionNames[index]} 
+            smooth={true} 
+            duration={800} 
+            onClick={() => scrollToSection(sectionNames[index])}
+          >
+            {item}
+          </Link>
+        </li>
+      );
+    })
 
     const scrollToSection = (sectionId: string) => {
       scroller.scrollTo(sectionId, {
@@ -16,19 +38,10 @@ export default function Menu (): JSX.Element {
       });
     };
 
-    const [isMenuVisible, setIsMenuVisible] = useState(false);
-    const [isMenuHovering, setIsMenuHovering] = useState(false);
-    const [isClicked, setIsClicked] = useState(false);
-    // const [liHovering, setLiHovering] = useState<Number | null>(null);
-
     const handleClick = () => {
       setIsMenuVisible(isMenuVisible => !isMenuVisible);
       setIsClicked(isClicked => !isClicked);
     }
-
-    // const handleLiHover = (index) => {
-    //   setLiHovering
-    // }
 
     return(
       <div className={styles.menu}>
@@ -63,61 +76,7 @@ export default function Menu (): JSX.Element {
           ></motion.div>
         </motion.button>
         <ul className={`${styles.nav} ${isMenuVisible ? styles.visible : ''}`}>
-          <li>
-            <Link 
-                className={`${styles.navLink} font-size1`} 
-                to="Home" 
-                smooth={true} 
-                duration={800} 
-                onClick={() => scrollToSection("Home")}
-              >
-              Accueil
-            </Link>
-          </li>
-          <li>
-            <Link 
-                className={`${styles.navLink} font-size1`} 
-                to="ProjectSection" 
-                smooth={true} 
-                duration={800} 
-                onClick={() => scrollToSection("ProjectSection")}
-              >
-              Projets
-            </Link>
-          </li>
-          <li>
-            <Link 
-                className={`${styles.navLink} font-size1`} 
-                to="Skills" 
-                smooth={true} 
-                duration={800} 
-                onClick={() => scrollToSection("Skills")}
-              >
-              Compétences
-            </Link>
-          </li>
-          <li>
-            <Link 
-              className={`${styles.navLink} font-size1`} 
-              to="About" 
-              smooth={true} 
-              duration={800} 
-              onClick={() => scrollToSection("About")}
-            >
-              A propos
-            </Link>
-          </li>
-          <li>
-            <Link 
-              className={`${styles.navLink} font-size1`} 
-              to="Contact" 
-              smooth={true} 
-              duration={800} 
-              onClick={() => scrollToSection("Contact")}
-            >
-              Contact
-            </Link>
-          </li>
+          {liJSX}
         </ul>
       </div>
     );

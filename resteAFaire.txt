@@ -6,6 +6,8 @@ Obligatoire :
 
 	=> Modifier la sémentique des balises pour le référencement (<section><header><footer>)
 
+	=> Typer correctement en Typescript
+
 	=> Bouton scroll section
 
 	=> Appuyer sur TAB pour contrôler l'accessibilité des boutons

@@ -3,6 +3,7 @@ import SectionSeparator from './SectionSeparator';
 import { FC, PropsWithChildren, useState } from 'react';
 import Project from './Project';
 import { LayoutGroup, motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from "react-i18next";
 
 type ProjectSectionProps = PropsWithChildren;
 type ProjectType = {
@@ -14,36 +15,37 @@ type ProjectType = {
   videoUri?: string,
 }[];
 
-const projects: ProjectType = [
-  {
-    title: "Board Game Companion",
-    videoUri: "bgc.mp4",
-    content: "Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis.",
-    stack: ["React-Native", "Expo", "Redux", "Node", "Express", "MongoDB"],
-    githubLink: "a",
-    projectLink: "a",
-  },
-  {
-    title: "Amaia Carrere",
-    videoUri: "amaia.mp4",
-    content: `Site vitrine d'une illustratrice de bandes dessinées.\n Statique - Responsive - SEO`,
-    stack: ["JS vanilla"],
-    githubLink: "a",
-    projectLink: "https://www.amaia-carrere.com/",
-  },  
-  {
-    title: "Mon portfolio",
-    videoUri: "",
-    content: "Celui-ci même !",
-    stack: ["React", "Next.js", "Framer-Motion"],
-    githubLink: "",
-    projectLink: "",
-  },
-]
-
 const ProjectSection: FC<ProjectSectionProps> = () => {
 
   const [activeProjectId, setActiveProjectId] = useState<Number | null>(null);
+  const { t } = useTranslation();
+
+  const projects: ProjectType = [
+    {
+      title: t('projectSection.projects.0.title'),
+      videoUri: "bgc.mp4",
+      content: t('projectSection.projects.0.content'),
+      stack: ["React-Native", "Expo", "Redux", "Node", "Express", "MongoDB", "Vercel"],
+      githubLink: "",
+      projectLink: "",
+    },
+    {
+      title: t('projectSection.projects.1.title'),
+      videoUri: "amaia.mp4",
+      content: t('projectSection.projects.1.content'),
+      stack: ["JS vanilla"],
+      githubLink: "",
+      projectLink: "https://www.amaia-carrere.com/",
+    },  
+    {
+      title: t('projectSection.projects.2.title'),
+      videoUri: "",
+      content: t('projectSection.projects.2.content'),
+      stack: ["React", "Next.js", "Framer-Motion"],
+      githubLink: "https://github.com/lapand/My-portfolio.git",
+      projectLink: "",
+    },
+  ]
 
   const handleClickProject = (id: Number | null) => id !== activeProjectId ?
       setActiveProjectId(id)
@@ -64,7 +66,7 @@ const ProjectSection: FC<ProjectSectionProps> = () => {
 
     return(
         <div className={styles.projectViewport}>
-          <SectionSeparator sectionName="Projets" />
+          <SectionSeparator sectionName={t("projectSection.sectionName")} />
           <div className={styles.projectContainer}>
             <div className={styles.leftSide}>
               <LayoutGroup>

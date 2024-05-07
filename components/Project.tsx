@@ -1,8 +1,8 @@
 import styles from "@/styles/Project.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function Project ({ 
     id, 
@@ -14,6 +14,8 @@ export default function Project ({
     githubLink, 
     projectLink 
 }): JSX.Element {
+
+    const { t } = useTranslation();
 
     const formattedContent = content.split('\n').map((slice, i) => {
         return <span key={i} className="font-size1">{slice}<br/></span>
@@ -92,7 +94,7 @@ export default function Project ({
                             <p 
                                 className={`${styles.toProject} font-size1 text-copper`}
                             >
-                                Vers le projet
+                                {t('projectSection.toProject')}
                             </p>
                             <Image 
                                 src="/external-link-arrow.png" 

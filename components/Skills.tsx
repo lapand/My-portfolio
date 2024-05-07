@@ -1,8 +1,7 @@
 import styles from "@/styles/Skills.module.css";
 import SectionSeparator from "./SectionSeparator";
-import Image from "next/image";
-import Link from "next/link";
 import TextAndImg from "./TextAndImg";
+import { useTranslation } from "react-i18next";
 
 type skillSection = {
     activityDomain?: string,
@@ -19,43 +18,30 @@ type skillSections = skillSection[];
 
 const cvUri = "/cv-andoni-laporte.pdf";
 const cvFileName = "cv-andoni-laporte.pdf";
-const sections: skillSections = [
-    {
-        activityDomain: "Secteur informatique",
-        description: "Développeur web",
-        skills: [
-            "React", 
-            "Redux", 
-            "Next.js",
-            "Typescript",
-            "React-Native", 
-            "Expo",
-            "Node.js", 
-            "Express", 
-            "MongoDB", 
-            "Vercel",
-            "Figma",
-        ],
-        imgUri: "/codeur.png",
-        imgAlt: "developer working on computer",
-        assetWidth: "100%",
-    },
-    {
-        activityDomain: "Secteur paramédical",
-        description: 
-            `Manipulateur en électroradiologie\n
-            IRM - CT-Scan - Radios
-            Gardes et prise en charge des urgences`
-        ,
-        skills: ["Communication", "Travail d'équipe", "Autonomie", "Adaptabilité", "Rigueur"],
-        imgUri: "/irm.png",
-        imgAlt: "IRM machine",
-        assetWidth: "100%",
-        isHorizontalSwitch: true,
-    },
-]
 
 export default function Skills (): JSX.Element {
+
+    const { t } = useTranslation();
+
+    const sections: skillSections = [
+        {
+            activityDomain: t('skillSection.activityDomain.0.title'),
+            description: t('skillSection.activityDomain.0.description'),
+            skills: t('skillSection.activityDomain.0.skills', { returnObjects: true }),
+            imgUri: "/codeur.png",
+            imgAlt: "developer working on computer",
+            assetWidth: "100%",
+        },
+        {
+            activityDomain: t('skillSection.activityDomain.1.title'),
+            description: t('skillSection.activityDomain.1.description'),
+            skills: t('skillSection.activityDomain.1.skills', { returnObjects: true }),
+            imgUri: "/irm.png",
+            imgAlt: "IRM machine",
+            assetWidth: "100%",
+            isHorizontalSwitch: true,
+        },
+    ]
 
     const sectionsJSX = sections.map((section, i) => {
         return (
@@ -65,7 +51,7 @@ export default function Skills (): JSX.Element {
 
     return (
         <div className={styles.skillsViewport}>
-            <SectionSeparator sectionName="Compétences" />
+            <SectionSeparator sectionName={t("skillSection.sectionName")} />
             <div className={styles.skillsContainer}>
                 {sectionsJSX}
             </div>
@@ -75,7 +61,7 @@ export default function Skills (): JSX.Element {
                     href={cvUri}
                     download={cvFileName}
                 >
-                    Download CV
+                    {t('skillSection.cv')}
                 </a>
             </div>
         </div>

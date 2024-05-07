@@ -2,6 +2,7 @@ import styles from "@/styles/Contact.module.css";
 import SectionSeparator from "./SectionSeparator";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function Contact (): JSX.Element {
 

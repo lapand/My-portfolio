@@ -16,7 +16,7 @@ export default function Main(): JSX.Element {
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
   const [scrollY, setScrollY] = useState(0);
-
+  
   useEffect(() => {
 
     // Enregistre les dimensions de la fenêtre du navigateur et surveille ses modifs
