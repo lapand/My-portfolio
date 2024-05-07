@@ -6,7 +6,9 @@ import { FC, PropsWithChildren } from "react";
 import SkillCard from "./SkillCard";
 import { useTranslation } from "react-i18next";
 
-export default function TextAndImg ({ 
+type MyComponentProps = Record<string, any>;
+
+const TextAndImg: React.FC<MyComponentProps> = ({ 
     imgUri, 
     imgAlt,
     videoUri, 
@@ -17,7 +19,7 @@ export default function TextAndImg ({
     description,
     skills,
     linkUrl,
-}): JSX.Element {
+}): JSX.Element => {
 
     const formattedDescription = description.split('\n').map((slice, i) => {
         return <span key={i} className="font-size1">{slice}<br/></span>
@@ -99,3 +101,5 @@ export default function TextAndImg ({
     );
 
 }
+
+export default TextAndImg;
