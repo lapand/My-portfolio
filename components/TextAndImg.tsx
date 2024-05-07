@@ -2,13 +2,11 @@ import styles from "@/styles/TextAndImg.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FC, PropsWithChildren } from "react";
 import SkillCard from "./SkillCard";
-import { useTranslation } from "react-i18next";
 
-type MyComponentProps = Record<string, any>;
+type TextAndImgProps = Record<string, any>;
 
-const TextAndImg: React.FC<MyComponentProps> = ({ 
+const TextAndImg: React.FC<TextAndImgProps> = ({ 
     imgUri, 
     imgAlt,
     videoUri, 
@@ -19,15 +17,15 @@ const TextAndImg: React.FC<MyComponentProps> = ({
     description,
     skills,
     linkUrl,
-}): JSX.Element => {
+}) => {
 
-    const formattedDescription = description.split('\n').map((slice, i) => {
+    const formattedDescription = description.split('\n').map((slice: string, i: number) => {
         return <span key={i} className="font-size1">{slice}<br/></span>
     })
 
     let skillCards;
     if(skills){
-        skillCards = skills.map((skill, i) => {
+        skillCards = skills.map((skill: string, i: number) => {
             return (
                 <SkillCard key={i} content={skill} />
             );

@@ -3,11 +3,7 @@ import SectionSeparator from './SectionSeparator';
 import TextAndImg from './TextAndImg';
 import { useTranslation } from "react-i18next";
 
-type AboutProps = {
-    [key: string]: any;
-}
-
-export default function About({}: AboutProps): JSX.Element{
+const About: React.FC = () => {
 
   const { t } = useTranslation();
 
@@ -42,3 +38,5 @@ export default function About({}: AboutProps): JSX.Element{
       </div>
     );
 }
+
+export default About;

@@ -1,4 +1,4 @@
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Link, scroller } from 'react-scroll';
 import styles from "@/styles/Menu.module.css";
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 const sectionNames: string[] = ["Home", "ProjectSection", "Skills", "About", "Contact"];
 
-export default function Menu (): JSX.Element {
+const Menu: React.FC = () => {
 
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const [isMenuHovering, setIsMenuHovering] = useState(false);
@@ -81,3 +81,5 @@ export default function Menu (): JSX.Element {
       </div>
     );
 }
+
+export default Menu;

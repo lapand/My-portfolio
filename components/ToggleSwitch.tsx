@@ -14,7 +14,7 @@ const spring = {
     damping: 30,
 }
 
-export default function ToggleSwitch ({style, width = '100%', ...rest }: ToggleSwitchProps): JSX.Element {
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({style, width = '100%', ...rest }) => {
 
     const [toggle, setToggle] = useState(false);
     const { i18n } = useTranslation();
@@ -44,6 +44,12 @@ export default function ToggleSwitch ({style, width = '100%', ...rest }: ToggleS
         </button>
     );
 }
+
+
+export default ToggleSwitch;
+
+
+
 
 /**
  * Composant ToggleSwitch

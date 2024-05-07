@@ -1,11 +1,10 @@
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Link, scroller } from 'react-scroll';
 import styles from "@/styles/Header.module.css";
-import { useEffect, useState, useRef } from "react";
 import Menu from './Menu';
 import ToggleSwitch from './ToggleSwitch';
 import Image from 'next/image';
 
-type HeaderProps = any;
+type HeaderProps = Record<string, any>;
 
 export default function Header({}: HeaderProps): JSX.Element{
 

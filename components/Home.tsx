@@ -2,7 +2,9 @@ import styles from '@/styles/Home.module.css';
 import Image from 'next/image';
 import { useTranslation, Trans } from "react-i18next";
 
-export default function Home(): JSX.Element {
+type HomeProps = Record<string, any>;
+
+export default function Home({}: HomeProps): JSX.Element {
 
   const { t } = useTranslation();
 

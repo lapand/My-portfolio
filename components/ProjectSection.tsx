@@ -1,11 +1,12 @@
 import styles from '@/styles/ProjectSection.module.css';
 import SectionSeparator from './SectionSeparator';
-import { FC, PropsWithChildren, useState } from 'react';
+import { useState } from 'react';
 import Project from './Project';
 import { LayoutGroup, motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from "react-i18next";
 
-type ProjectSectionProps = PropsWithChildren;
+type ProjectSectionProps = Record<string, any>;
+
 type ProjectType = {
   title: string,
   content: string,
@@ -15,9 +16,9 @@ type ProjectType = {
   videoUri?: string,
 }[];
 
-const ProjectSection: FC<ProjectSectionProps> = () => {
+const ProjectSection: React.FC<ProjectSectionProps> = () => {
 
-  const [activeProjectId, setActiveProjectId] = useState<Number | null>(null);
+  const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
   const { t } = useTranslation();
 
   const projects: ProjectType = [
@@ -47,7 +48,7 @@ const ProjectSection: FC<ProjectSectionProps> = () => {
     },
   ]
 
-  const handleClickProject = (id: Number | null) => id !== activeProjectId ?
+  const handleClickProject = (id: number | null) => id !== activeProjectId ?
       setActiveProjectId(id)
     :
       setActiveProjectId(null);

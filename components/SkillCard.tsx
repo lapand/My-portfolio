@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
 import styles from "@/styles/SkillCard.module.css";
 
-export default function SkillCard ({ content }): JSX.Element {
+type SkillCardProps = Record<string, any>;
+
+const SkillCard: React.FC<SkillCardProps> = ({ content }) => {
 
     return (
         <div 
@@ -13,3 +13,5 @@ export default function SkillCard ({ content }): JSX.Element {
         </div>
     )
 }
+
+export default SkillCard;

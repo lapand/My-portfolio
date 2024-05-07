@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 type skillSection = {
     activityDomain?: string,
     description?: string,
-    skills?: Array<string>,
+    skills?: any,
     imgUri?: string,
     imgAlt?: string,
     videoUri?: string,
@@ -19,7 +19,7 @@ type skillSections = skillSection[];
 const cvUri = "/cv-andoni-laporte.pdf";
 const cvFileName = "cv-andoni-laporte.pdf";
 
-export default function Skills (): JSX.Element {
+const Skills: React.FC = () => {
 
     const { t } = useTranslation();
 
@@ -68,3 +68,5 @@ export default function Skills (): JSX.Element {
     );
 
 }
+
+export default Skills;

@@ -2,9 +2,11 @@ import styles from "@/styles/Project.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-export default function Project ({ 
+type ProjectSectionProps = Record<string, any>;
+
+const Project: React.FC<ProjectSectionProps> = ({ 
     id, 
     onClick, 
     isActive, 
@@ -13,15 +15,15 @@ export default function Project ({
     stack, 
     githubLink, 
     projectLink 
-}): JSX.Element {
+}) => {
 
     const { t } = useTranslation();
 
-    const formattedContent = content.split('\n').map((slice, i) => {
+    const formattedContent = content.split('\n').map((slice: string, i: number) => {
         return <span key={i} className="font-size1">{slice}<br/></span>
     })
 
-    const stackJSX = stack.map((techno, i) => (
+    const stackJSX = stack.map((techno: string, i: number) => (
         <div key={i} className={`${styles.techno} bg-copper text-black font-size0`} data-text={techno}>{techno}</div>
     ))
 
@@ -116,3 +118,5 @@ export default function Project ({
     );
 
 }
+
+export default Project;

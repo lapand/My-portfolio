@@ -1,9 +1,9 @@
 import styles from '@/styles/SectionSeparator.module.css';
 import { motion } from 'framer-motion';
 
-type SectionSeparatorProps = any;
+type SectionSeparatorProps = Record<string, any>;;
 
-export default function SectionSeparator ({ sectionName }: SectionSeparatorProps): JSX.Element {
+const SectionSeparator: React.FC<SectionSeparatorProps> = ({ sectionName }) => {
 
     return (
         <div className={styles.sectionSeparator}>
@@ -25,3 +25,5 @@ export default function SectionSeparator ({ sectionName }: SectionSeparatorProps
     );
 
 }
+
+export default SectionSeparator;
