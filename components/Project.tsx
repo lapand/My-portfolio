@@ -22,7 +22,7 @@ const Project: React.FC<ProjectSectionProps> = ({
     const formattedContent = content.split('\n').map((slice: string, i: number) => {
         return <span key={i} className="font-size1">{slice}<br/></span>
     })
-
+    
     const stackJSX = stack.map((techno: string, i: number) => (
         <div key={i} className={`${styles.techno} bg-copper text-black font-size0`} data-text={techno}>{techno}</div>
     ))

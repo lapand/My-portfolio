@@ -12,7 +12,7 @@ i18next
                 translation: {
                     menu: ['Accueil', 'Projets', 'Compétences', 'A propos', 'Contact'],
                     home: {
-                        title: 'Développeur web & mobile',
+                        title: '<0 className="font-size41">Développeur web & mobile</0>',
                         tagline: '<0 className="text-coral font-size5" >Plongez</0> dans ma toile,<2/> tissée de code et de passion.',
                     },
                     projectSection: {
@@ -20,7 +20,7 @@ i18next
                         projects: [
                             {
                                 title: 'Board Game Companion',
-                                content: 'Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis.',
+                                content: `Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis.`,
                             },
                             {
                                 title: 'Amaia Carrere',
@@ -79,7 +79,7 @@ i18next
                 translation: {
                     menu: ['Home', 'Projects', 'Skills', 'About', 'Contact'],
                     home: {
-                        title: 'Web & mobile developer',
+                        title: '<0 className="font-size41">Web & mobile developer</0>',
                         tagline: '<0 className="text-coral font-size5" >Dive</0> into my web,<2/> woven of code and passion.',
                     },
                     projectSection: {

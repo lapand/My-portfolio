@@ -6,7 +6,7 @@ type HomeProps = Record<string, any>;
 
 export default function Home({}: HomeProps): JSX.Element {
 
-  const { t } = useTranslation();
+  useTranslation();
 
     return(
       <div className={ styles.homeContainer }>
@@ -16,8 +16,10 @@ export default function Home({}: HomeProps): JSX.Element {
               <span className="text-coral font-size5" >Plongez</span> dans ma toile,<br/> tissée de code et de passion.
             </Trans>
           </p>
-          <h2 className="font-size41" style={{ alignSelf: "flex-end" }}>
-              {t('home.title')}
+          <h2 style={{ alignSelf: "flex-end" }}>
+            <Trans i18nKey="home.title">
+              <strong className="font-size41">Développeur web & mobile</strong>
+            </Trans>
           </h2>
         </div>
         {/* <div className={styles.light}></div> */}

@@ -16,8 +16,8 @@ const Main: React.FC<MainProps> = () => {
   return (
     <>
       <Head>
-        <title>Andoni Laporte, web developer</title>
-        <meta name="description" content="Portfolio, présentation de mes projets web et mobile" />
+        <title>Andoni Laporte - Développeur web et mobile - Portfolio</title>
+        <meta name="description" content="Portfolio de Andoni Laporte, présentation de mes projets et compétences en développement web et mobile." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/labyrinthe.ico" />
       </Head>

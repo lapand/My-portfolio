@@ -1,10 +1,8 @@
 Obligatoire :
 
-	=> Changement de langue avec i18Next
-
 	=> Balises <strong> pour le référencement
 
-	=> Modifier la sémentique des balises pour le référencement (<section><header><footer>)
+	=> Modifier la sémantique des balises pour le référencement (<section><header><footer>)
 
 	=> Typer correctement en Typescript
 
@@ -12,8 +10,7 @@ Obligatoire :
 
 	=> Appuyer sur TAB pour contrôler l'accessibilité des boutons
 
-	=> Changer la favicon.ico
-
+	=> Compresser les vidéos / images
 
 Facultatif :
 
