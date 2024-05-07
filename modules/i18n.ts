@@ -4,7 +4,7 @@ import { initReactI18next } from "react-i18next";
 i18next
     .use(initReactI18next)
     .init({
-        debug: true,
+        // debug: true,
         interpolation: { escapeValue: false },
         fallbackLng: 'fr',
         resources: {

@@ -16,7 +16,7 @@ export default function Menu (): JSX.Element {
 
     const liJSX = menuArray.map((item, index) => {
       return(
-        <li>
+        <li key={item}>
           <Link 
             className={`${styles.navLink} font-size1`} 
             to={sectionNames[index]} 
