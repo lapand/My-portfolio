@@ -12,6 +12,8 @@ Obligatoire :
 
 	=> Compresser les vidéos / images
 
+	=> Supprimer le composant TextAndImg pour créer un composant <subSection></subSection> en utilisant la prop children puis créer des sous composants à passer entre ses balises
+
 Facultatif :
 
 	=> Augmenter la réso du background-image de l'accueil
