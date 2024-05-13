@@ -30,14 +30,14 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       githubLink: "",
       projectLink: "",
     },
-    {
-      title: t('projectSection.projects.1.title'),
-      videoUri: "amaia.mp4",
-      content: t('projectSection.projects.1.content'),
-      stack: ["JS vanilla"],
-      githubLink: "",
-      projectLink: "https://www.amaia-carrere.com/",
-    },  
+    // {
+    //   title: t('projectSection.projects.1.title'),
+    //   videoUri: "amaia.mp4",
+    //   content: t('projectSection.projects.1.content'),
+    //   stack: ["JS vanilla"],
+    //   githubLink: "",
+    //   projectLink: "https://www.amaia-carrere.com/",
+    // },
     {
       title: t('projectSection.projects.2.title'),
       videoUri: "",
