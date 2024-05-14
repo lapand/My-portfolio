@@ -83,6 +83,7 @@ const TextAndImg: React.FC<TextAndImgProps> = ({
                                 autoPlay={true} 
                                 muted={true} 
                                 loop={true}
+                                playsInline
                                 initial={{ opacity: 0 }} 
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }} 
