@@ -72,3 +72,22 @@
     opacity: .7;
     cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+    .menu {
+        position: inherit;
+    }
+    .nav {
+        min-width: 200px;
+        top: 200%;
+        right: calc(50% - 100px);
+        background-color: black;
+        border-radius: 25%;
+        padding: 20px;
+        border-left:1px solid #E0C097;
+    }
+    .nav li {
+        justify-content: center;
+        margin: 5px;
+    }
+}

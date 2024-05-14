@@ -1,6 +1,6 @@
 import { Link, scroller } from 'react-scroll';
 import styles from "@/styles/Menu.module.css";
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from "react-i18next";
 
@@ -13,22 +13,15 @@ const Menu: React.FC = () => {
     const [isClicked, setIsClicked] = useState(false);
     const { t } = useTranslation();
     const menuArray: string[] = t('menu', { returnObjects: true }) as string[];
+    const [windowWidth, setWindowWidth] = useState<number>(0);
 
-    const liJSX = menuArray.map((item, index) => {
-      return(
-        <li key={item}>
-          <Link 
-            className={`${styles.navLink} font-size1`} 
-            to={sectionNames[index]} 
-            smooth={true} 
-            duration={800} 
-            onClick={() => scrollToSection(sectionNames[index])}
-          >
-            {item}
-          </Link>
-        </li>
-      );
-    })
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      }
+      window.addEventListener('resize', handleResize);
+      return () => removeEventListener('resize', handleResize);
+    }, []);
 
     const scrollToSection = (sectionId: string) => {
       scroller.scrollTo(sectionId, {
@@ -42,6 +35,25 @@ const Menu: React.FC = () => {
       setIsMenuVisible(isMenuVisible => !isMenuVisible);
       setIsClicked(isClicked => !isClicked);
     }
+
+    const liJSX = menuArray.map((item, index) => {
+      return(
+        <li key={item}>
+          <Link 
+            className={`${styles.navLink} font-size1`} 
+            to={sectionNames[index]} 
+            smooth={true} 
+            duration={800} 
+            onClick={() => {
+              scrollToSection(sectionNames[index]);
+              windowWidth <= 500 && setIsMenuVisible(false);
+            }}
+          >
+            {item}
+          </Link>
+        </li>
+      );
+    })
 
     return(
       <div className={styles.menu}>
