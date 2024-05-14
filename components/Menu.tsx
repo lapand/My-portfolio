@@ -25,9 +25,9 @@ const Menu: React.FC = () => {
 
     const scrollToSection = (sectionId: string) => {
       scroller.scrollTo(sectionId, {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart'
+        duration: 800,
+        delay: 0,
+        smooth: 'easeInOutQuart'
       });
     };
 
@@ -46,7 +46,7 @@ const Menu: React.FC = () => {
             duration={800} 
             onClick={() => {
               scrollToSection(sectionNames[index]);
-              windowWidth <= 500 && setIsMenuVisible(false);
+              windowWidth <= 500 && handleClick();
             }}
           >
             {item}
