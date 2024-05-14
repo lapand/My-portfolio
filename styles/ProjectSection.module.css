@@ -74,6 +74,7 @@
 
 @media screen and (max-width: 1000px) {
   .projectViewport {
+    height: auto;
     gap: 50px;
   }
   .projectContainer {
@@ -84,5 +85,6 @@
     width: 100%;
     flex-direction: row;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 }

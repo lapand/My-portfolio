@@ -73,6 +73,9 @@
 }
 
 .lanterne {
+    width: 10%;
+    min-width: 150px;
+    height: auto;
     position: absolute;
     left: -10px;
     top: -10px;
@@ -80,8 +83,13 @@
     transform-origin: top center;
     animation: swing 6s ease-in-out infinite;
     pointer-events: none;
-    min-width: 150px;
     /* border: 2px solid white; */
+}
+@media screen and (max-width: 500px){
+    .lanterne{
+        min-width: auto;
+        width: 100px;
+    }
 }
 
 @keyframes swing {

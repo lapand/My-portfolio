@@ -28,10 +28,6 @@ export default function Home({}: HomeProps): JSX.Element {
             alt="lanterne"
             width={500}
             height={500}
-            style={{
-              width: '10%',
-              height: 'auto',
-            }}
             className={styles.lanterne}
         />
       </div>

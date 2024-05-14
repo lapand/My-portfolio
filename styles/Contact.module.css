@@ -19,7 +19,8 @@
 
 .linksContainer {
     width: 25%;
-    height: 300px;
+    min-width: 200px;
+    height: 45%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -32,9 +33,14 @@
 .contactItem{
     --float-height: 80px; /* Hauteur jusqu'à laquelle flotte l'élément */
     height: 2.8vw;
-    min-height: 40px;
+    min-height: 50px;
     position: relative;
     /* border: 2px solid rgb(229, 255, 0); */
+}
+@media screen and (max-width: 500px) {
+    .contactItem{
+        --float-height: 60px;
+    }
 }
 
 @keyframes float{
