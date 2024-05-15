@@ -112,12 +112,13 @@
         width: 100%;
         flex-direction: column;
         gap: 50px;
+        padding: 1em;
         border: 2px solid rgb(20, 20, 20);
     }
     .reverse {
         flex-direction: column-reverse;
     }
-    .descriptionContainer {
+    .descriptionContainer, .description {
         width: 100%;
     }
     .assetOuterContainer {
