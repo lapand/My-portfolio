@@ -1,12 +1,7 @@
-import { CSSProperties, useState } from 'react';
+import { useState } from 'react';
 import styles from '@/styles/ToggleSwitch.module.css';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-
-type ToggleSwitchProps = {
-    style?: CSSProperties;
-    width?: string;
-}
 
 const spring = {
     type: "spring",
@@ -14,15 +9,10 @@ const spring = {
     damping: 30,
 }
 
-const ToggleSwitch: React.FC<ToggleSwitchProps> = ({style, width = '100%', ...rest }) => {
+const ToggleSwitch: React.FC = () => {
 
     const [toggle, setToggle] = useState(false);
     const { i18n } = useTranslation();
-    
-    const combinedStyles: CSSProperties = {
-        ...style,
-        width,
-    };
 
     const handleToggle = () => {
         setToggle(toggle => !toggle);
@@ -33,13 +23,31 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({style, width = '100%', ...re
     }
 
     return (
-        <button className={styles.toggleSwitch} style={combinedStyles} {...rest} onClick={handleToggle}>
+        <button className={styles.toggleSwitch} onClick={handleToggle}>
             <div className={styles.languagesBloc}>
-                <div className={`${styles.language} ${!toggle && styles.active} font-size00`}>FR</div>
-                <div className={`${styles.language} ${toggle && styles.active} font-size00`}>EN</div>
+                <div 
+                    className={`
+                        ${styles.language} 
+                        ${!toggle && styles.active} 
+                        font-size00
+                    `}
+                >FR
+                </div>
+                <div 
+                    className={`
+                        ${styles.language} 
+                        ${toggle && styles.active} 
+                        font-size00
+                    `}
+                >EN
+                </div>
             </div>
             <div className={`${styles.absoluteContainer} ${toggle && styles.moveRight}`}>
-                <motion.div className={styles.indicator} layout transition={spring}></motion.div>
+                <motion.div 
+                    className={styles.indicator} 
+                    layout 
+                    transition={spring}
+                ></motion.div>
             </div>
         </button>
     );
@@ -47,16 +55,3 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({style, width = '100%', ...re
 
 
 export default ToggleSwitch;
-
-
-
-
-/**
- * Composant ToggleSwitch
- * 
- * @param {CSSProperties} style - Les styles CSS à appliquer au composant.
- * @param {string} width - La largeur du composant. La valeur par défaut est "100%".
- * @param {React.HTMLAttributes<HTMLDivElement>} rest - Les autres props à passer à la <div> racine du composant. 
- *                                                     Les props non documentées seront transmises directement à la <div>.
- * @returns {JSX.Element} - Le composant ToggleSwitch.
- */

@@ -9,15 +9,16 @@ import Skills from "@/components/Skills";
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 
-type MainProps = Record<string, any>;
-
-const Main: React.FC<MainProps> = () => {
+const Main: React.FC = () => {
 
   return (
     <>
       <Head>
         <title>Andoni Laporte - Développeur web et mobile - Portfolio</title>
-        <meta name="description" content="Portfolio de Andoni Laporte, présentation de mes projets et compétences en développement web et mobile." />
+        <meta 
+          name="description" 
+          content="Portfolio de Andoni Laporte, présentation de mes projets et compétences en développement web et mobile." 
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/labyrinthe.ico" />
       </Head>

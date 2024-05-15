@@ -4,9 +4,7 @@ import Menu from './Menu';
 import ToggleSwitch from './ToggleSwitch';
 import Image from 'next/image';
 
-type HeaderProps = Record<string, any>;
-
-export default function Header({}: HeaderProps): JSX.Element{
+const Header: React.FC = () => {
 
   const scrollToSection = (sectionId: string) => {
     scroller.scrollTo(sectionId, {
@@ -17,7 +15,7 @@ export default function Header({}: HeaderProps): JSX.Element{
   };
 
   return(
-      <div className={styles.header}>
+      <header className={styles.header}>
         <div className={ styles.logoContainer }>
           <Link
             to="Home" 
@@ -39,9 +37,11 @@ export default function Header({}: HeaderProps): JSX.Element{
           </Link>
         </div>
         <div className={styles.controlPanel}>
-          <ToggleSwitch width="auto"/>
+          <ToggleSwitch />
           <Menu />
         </div>
-      </div>
+      </header>
   );
 }
+
+export default Header;

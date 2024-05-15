@@ -5,8 +5,6 @@ import Project from './Project';
 import { LayoutGroup, motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from "react-i18next";
 
-type ProjectSectionProps = Record<string, any>;
-
 type ProjectType = {
   title: string,
   content: string,
@@ -16,7 +14,7 @@ type ProjectType = {
   videoUri?: string,
 }[];
 
-const ProjectSection: React.FC<ProjectSectionProps> = () => {
+const ProjectSection: React.FC = () => {
 
   const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
   const { t } = useTranslation();
@@ -26,7 +24,16 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       title: t('projectSection.projects.0.title'),
       videoUri: "bgc.mp4",
       content: t('projectSection.projects.0.content'),
-      stack: ["React-Native", "Expo", "Redux", "Node", "Express", "MongoDB", "Vercel", "Trello"],
+      stack: [
+        "React-Native", 
+        "Expo", 
+        "Redux", 
+        "Node", 
+        "Express", 
+        "MongoDB", 
+        "Vercel", 
+        "Trello",
+      ],
       githubLink: "",
       projectLink: "",
     },
@@ -42,7 +49,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       title: t('projectSection.projects.2.title'),
       videoUri: "",
       content: t('projectSection.projects.2.content'),
-      stack: ["React", "Next.js", "Typescript", "Framer-Motion"],
+      stack: ["React", "Next.js", "Typescript", "Framer-Motion", "Figma"],
       githubLink: "https://github.com/lapand/My-portfolio.git",
       projectLink: "",
     },
@@ -71,7 +78,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
   })
 
     return(
-        <div className={styles.projectViewport}>
+        <section className={styles.projectViewport}>
           <SectionSeparator sectionName={t("projectSection.sectionName")} />
           <div className={styles.projectContainer}>
             <div className={styles.leftSide}>
@@ -94,7 +101,10 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }} 
                     >
-                      <source src={projects[activeProjectId].videoUri} type="video/mp4" />
+                      <source 
+                        src={projects[activeProjectId].videoUri} 
+                        type="video/mp4" 
+                      />
                       Votre navigateur ne permet pas de lire cette vidéo.
                     </motion.video>
                   }
@@ -102,7 +112,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
     );
 }
 

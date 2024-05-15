@@ -1,7 +1,9 @@
 import styles from '@/styles/SectionSeparator.module.css';
 import { motion } from 'framer-motion';
 
-type SectionSeparatorProps = Record<string, any>;;
+type SectionSeparatorProps = {
+    sectionName: string,
+};
 
 const SectionSeparator: React.FC<SectionSeparatorProps> = ({ sectionName }) => {
 

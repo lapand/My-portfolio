@@ -98,12 +98,12 @@ const About: React.FC = () => {
   });
 
     return(
-      <div className={ styles.aboutViewport }>
+      <section className={ styles.aboutViewport }>
         <SectionSeparator sectionName={t('aboutSection.sectionName')} />
         <div className={styles.aboutContainer}>
           {subSectionsJSX}
         </div>
-      </div>
+      </section>
     );
 }
 

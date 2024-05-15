@@ -114,7 +114,7 @@ button {
 /***** Font-sizes *****/
 
 .font-size00 {
-  font-size: clamp(.6rem, .12rem + .390625vw , 5rem);
+  font-size: clamp(.5rem, .12rem + .390625vw , 5rem);
 }
 .font-size0 {
   font-size: clamp(.7rem, .35rem + .390625vw , 5rem);

@@ -1,6 +1,6 @@
 import { Link, scroller } from 'react-scroll';
 import styles from "@/styles/Menu.module.css";
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from "react-i18next";
 
@@ -56,7 +56,7 @@ const Menu: React.FC = () => {
     })
 
     return(
-      <div className={styles.menu}>
+      <nav className={styles.menu}>
         <motion.button 
           className={styles.menuIcon} 
           onClick={handleClick}
@@ -90,7 +90,7 @@ const Menu: React.FC = () => {
         <ul className={`${styles.nav} ${isMenuVisible ? styles.visible : ''}`}>
           {liJSX}
         </ul>
-      </div>
+      </nav>
     );
 }
 

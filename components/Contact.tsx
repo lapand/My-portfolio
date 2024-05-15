@@ -10,11 +10,14 @@ const Contact: React.FC = () => {
     }
 
     return(
-        <div className={styles.contactViewport}>
+        <section className={styles.contactViewport}>
             <SectionSeparator sectionName="Contact" />
             <div className={styles.contactContainer}>
                 <div className={styles.linksContainer}>
-                    <button onClick={handleClickSendMail} className={`${styles.contactItem} ${styles.item1}`}>
+                    <button 
+                        onClick={handleClickSendMail} 
+                        className={`${styles.contactItem} ${styles.item1}`}
+                    >
                         <Image 
                             src="/email-brick.png"
                             alt="email"
@@ -28,7 +31,10 @@ const Contact: React.FC = () => {
                         />
                     </button>
                     <button className={`${styles.contactItem} ${styles.item2}`}>
-                        <Link href="https://fr.linkedin.com/in/andoni-laporte-7b579429a" target="_blank">
+                        <Link 
+                            href="https://fr.linkedin.com/in/andoni-laporte-7b579429a" 
+                            target="_blank"
+                        >
                             <Image 
                                 src="/linkedin-brick2.png"
                                 alt="email"
@@ -81,7 +87,7 @@ const Contact: React.FC = () => {
                     </p>
                 </div>
             </footer>
-        </div>
+        </section>
     );
 }
 

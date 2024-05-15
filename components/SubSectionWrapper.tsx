@@ -1,10 +1,9 @@
 import styles from "@/styles/SubSectionWrapper.module.css";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import SkillCard from "./SkillCard";
+import type { PropsWithChildren } from "react";
 
-type SubSectionWrapperProps = Record<string, any>;
+type SubSectionWrapperProps = PropsWithChildren<{
+    isHorizontalSwitch?: Boolean,
+}>;
 
 const SubSectionWrapper: React.FC<SubSectionWrapperProps> = ({ 
     children,

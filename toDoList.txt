@@ -2,15 +2,15 @@ Obligatoire :
 
 	=> Balises <strong> pour le référencement
 
-	=> Modifier la sémantique des balises pour le référencement (<section><header><footer>)
-
-	=> Typer correctement en Typescript
+	=> Modifier les divs correspondantes en <figure>, <figcaption>, <article> et <aside>
 
 	=> Bouton scroll section
 
 	=> Appuyer sur TAB pour contrôler l'accessibilité des boutons
 
 	=> Compresser les vidéos / images et srcset sur les images trop lourdes
+
+	=> Les dimensions du toggleSwitch sont uniquement dépendantes de la font-size de son contenu => Pb : On ne peut plus choisir la font-size sans modifier la taille du composant
 
 Facultatif :
 
@@ -31,3 +31,5 @@ Facultatif :
 	=> Créer des tests unitaires pour chaque composant
 
 	=> Mise en cache
+
+	=> La const sectionNames contenue dans le fichier du composant Menu peut être dynamique et venir des noms des sections dans index.tsx

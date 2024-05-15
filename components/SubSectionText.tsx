@@ -1,10 +1,11 @@
 import styles from "@/styles/SubSectionText.module.css";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
 
-type SubSectionTextProps = Record<string, any>;
+type SubSectionTextProps = {
+    activityDomain?: string,
+    description?: string,
+    skills?: string[],
+};
 
 const SubSectionText: React.FC<SubSectionTextProps> = ({
     activityDomain,
@@ -12,9 +13,9 @@ const SubSectionText: React.FC<SubSectionTextProps> = ({
     skills,
 }) => {
 
-    const formattedDescription = description.split('\n').map((slice: string, i: number) => {
+    const formattedDescription = description?.split('\n').map((slice: string, i: number) => {
         return <span key={i} className="font-size1">{slice}<br/></span>
-    })
+    });
 
     let skillCards;
     if(skills){
@@ -33,7 +34,9 @@ const SubSectionText: React.FC<SubSectionTextProps> = ({
                 {activityDomain && 
                     <h4 className={styles.activityDomain}>{activityDomain}</h4>
                 }
-                <p>{formattedDescription}</p>
+                {formattedDescription && 
+                    <p>{formattedDescription}</p>
+                }
                 {(skillCards && skillCards.length !== 0) &&
                     <div 
                         className={styles.containerSkills}

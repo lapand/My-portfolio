@@ -4,7 +4,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-type ProjectSectionProps = Record<string, any>;
+type ProjectSectionProps = {
+    id: number,
+    onClick: Function,
+    isActive: Boolean,
+    title: string,
+    content: string,
+    stack: string[],
+    githubLink?: string,
+    projectLink?: string,
+};
 
 const Project: React.FC<ProjectSectionProps> = ({ 
     id, 
@@ -20,12 +29,18 @@ const Project: React.FC<ProjectSectionProps> = ({
     const { t } = useTranslation();
 
     const formattedContent = content.split('\n').map((slice: string, i: number) => {
-        return <span key={i} className="font-size1">{slice}<br/></span>
-    })
+        return <span key={i} className="font-size1">{slice}<br/></span>;
+    });
     
     const stackJSX = stack.map((techno: string, i: number) => (
-        <div key={i} className={`${styles.techno} bg-copper text-black font-size0`} data-text={techno}>{techno}</div>
-    ))
+        <div 
+            key={i} 
+            className={`${styles.techno} bg-copper text-black font-size0`} 
+            data-text={techno}
+        >
+            {techno}
+        </div>
+    ));
 
     return (
         <motion.div 

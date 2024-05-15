@@ -1,6 +1,8 @@
 import styles from "@/styles/SkillCard.module.css";
 
-type SkillCardProps = Record<string, any>;
+type SkillCardProps = {
+    content: string,
+};
 
 const SkillCard: React.FC<SkillCardProps> = ({ content }) => {
 

@@ -106,7 +106,7 @@ const Skills: React.FC = () => {
     });
 
     return (
-        <div className={styles.skillsViewport}>
+        <section className={styles.skillsViewport}>
             <SectionSeparator sectionName={t("skillSection.sectionName")} />
             <div className={styles.skillsContainer}>
                 {subSectionsJSX}
@@ -120,7 +120,7 @@ const Skills: React.FC = () => {
                     {t('skillSection.cv')}
                 </a>
             </div>
-        </div>
+        </section>
     );
 
 }

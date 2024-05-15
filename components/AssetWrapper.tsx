@@ -1,6 +1,10 @@
 import styles from "@/styles/AssetWrapper.module.css";
+import { PropsWithChildren } from "react";
 
-type AssetWrapperProps = Record<string, any>;
+type AssetWrapperProps = PropsWithChildren<{
+    assetWidth?: string,
+    gradientBlend?: Boolean,
+}>;
 
 const AssetWrapper: React.FC<AssetWrapperProps> = ({ 
     children,
@@ -9,20 +13,19 @@ const AssetWrapper: React.FC<AssetWrapperProps> = ({
 }) => {
 
     return (
+        <div 
+            className={styles.assetOuterContainer}
+        >
             <div 
-                className={styles.assetOuterContainer}
+                className={gradientBlend ? 
+                    styles.assetInnerContainer : styles.assetInnerContainerWithoutAfter
+                }
+                style={{ width: assetWidth }}
             >
-                <div 
-                    className={gradientBlend ? 
-                        styles.assetInnerContainer : styles.assetInnerContainerWithoutAfter
-                    }
-                    style={{ width: assetWidth }}
-                >
-                    {children}
-                </div>
+                {children}
             </div>
+        </div>
     );
-
 }
 
 export default AssetWrapper;

@@ -2,18 +2,17 @@ import styles from '@/styles/Home.module.css';
 import Image from 'next/image';
 import { useTranslation, Trans } from "react-i18next";
 
-type HomeProps = Record<string, any>;
-
-export default function Home({}: HomeProps): JSX.Element {
+const Home: React.FC = () => {
 
   useTranslation();
 
     return(
-      <div className={ styles.homeContainer }>
+      <section className={ styles.homeContainer }>
         <div className={ styles.homeContent }>
           <p className="font-size5">
             <Trans i18nKey="home.tagline">
-              <span className="text-coral font-size5" >Plongez</span> dans ma toile,<br/> tissée de code et de passion.
+              <span className="text-coral font-size5" >Plongez</span>
+               dans ma toile,<br/> tissée de code et de passion.
             </Trans>
           </p>
           <h2 style={{ alignSelf: "flex-end" }}>
@@ -30,6 +29,8 @@ export default function Home({}: HomeProps): JSX.Element {
             height={500}
             className={styles.lanterne}
         />
-      </div>
+      </section>
     );
 }
+
+export default Home;
