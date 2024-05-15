@@ -12,7 +12,7 @@ Obligatoire :
 
 	=> Compresser les vidéos / images
 
-	=> Supprimer le composant TextAndImg pour créer un composant <subSection></subSection> en utilisant la prop children puis créer des sous composants à passer entre ses balises
+	=> Mise en cache
 
 Facultatif :
 
@@ -25,3 +25,7 @@ Facultatif :
 	=> Animation sur <ul> à l'ouverture/fermeture du menu
 
 	=> Indiquer la section actuelle sur le menu
+
+	=> Dans About.tsx, le Link placé en absolute à la suite de la vidéo ne doit pas être écrit à l'intérieur du map car il ne doit exister que pour la vidéo du livre de liaison. Au lieu de ça, il faudra l'ajouter à subSectionsJSX[1] en dehors du map avant le retour du composant.
+
+	=> Revoir l'imbrication des composants ? Un composant générique "Section" ? Répétition du JSX dans Skills.tsx et About.tsx

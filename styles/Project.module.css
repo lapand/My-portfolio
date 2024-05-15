@@ -36,20 +36,20 @@
 }
 
 .githubBtn {
-    width: 8%;
+    width: 6%;
     min-width: 40px;
     margin-left: .8em;
     /* border:2px solid rgb(0, 128, 49); */
 }
 
 .description {
-    width: 66.666%;
+    width: 94%;
     text-align: left;
     /* border:2px solid rgb(0, 128, 49); */
 }
 
 .stack {
-    width: 66.666%;
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     gap: .5em;

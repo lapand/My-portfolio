@@ -1,0 +1,32 @@
+.descriptionContainer {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid rgb(0, 255, 4); */
+}
+
+.description {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    text-align: center;
+    /* border: 2px solid rgb(4, 0, 255); */
+}
+
+.containerSkills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+    /* border: 2px solid rgb(0, 47, 255); */
+}
+
+@media screen and (max-width: 1000px) {
+    .descriptionContainer, .description {
+        width: 100%;
+    }
+}

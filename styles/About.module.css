@@ -1,4 +1,5 @@
 .aboutViewport {
+    min-height: 100vh;
     padding: calc(var(--header-height) + var(--header-section-gap)) 5% 5%;
     display: flex;
     flex-direction: column;
@@ -14,4 +15,20 @@
     align-items: center;
     gap: 10rem;
     /* border: 2px solid cyan; */
+}
+
+.video {
+    width: 100%;
+    /* border: 2px solid red; */
+}
+
+.link {
+    position: absolute;
+    top: 8%;
+    left: 22%;
+    width: 50%;
+    height: 70%;
+    z-index: 1;
+    cursor: grab;
+    /* border: 2px solid green; */
 }

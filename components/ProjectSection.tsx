@@ -26,7 +26,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       title: t('projectSection.projects.0.title'),
       videoUri: "bgc.mp4",
       content: t('projectSection.projects.0.content'),
-      stack: ["React-Native", "Expo", "Redux", "Node", "Express", "MongoDB", "Vercel"],
+      stack: ["React-Native", "Expo", "Redux", "Node", "Express", "MongoDB", "Vercel", "Trello"],
       githubLink: "",
       projectLink: "",
     },
@@ -42,7 +42,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       title: t('projectSection.projects.2.title'),
       videoUri: "",
       content: t('projectSection.projects.2.content'),
-      stack: ["React", "Next.js", "Framer-Motion"],
+      stack: ["React", "Next.js", "Typescript", "Framer-Motion"],
       githubLink: "https://github.com/lapand/My-portfolio.git",
       projectLink: "",
     },
@@ -54,14 +54,19 @@ const ProjectSection: React.FC<ProjectSectionProps> = () => {
       setActiveProjectId(null);
 
   const projectsJSX = projects.map((project, i) => {
+
+    if(activeProjectId !== null && activeProjectId !== i){
+      return;
+    }
+
     return (
-      <Project 
-        key={i} 
-        id={i} 
-        {...project} 
-        isActive={ i === activeProjectId ? true : false } 
-        onClick={handleClickProject} 
-      />
+        <Project 
+          key={i} 
+          id={i} 
+          {...project} 
+          isActive={ i === activeProjectId ? true : false } 
+          onClick={handleClickProject} 
+        />
     );
   })
 

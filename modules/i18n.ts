@@ -20,7 +20,15 @@ i18next
                         projects: [
                             {
                                 title: 'Board Game Companion',
-                                content: `Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis.`,
+                                content: 
+                                    `Application mobile de ludothèque permettant de répertorier ses jeux de société et les parties faites entre amis.\n
+                                    Projet collaboratif organisé en sprints, méthode SCRUM\n
+                                    => Enregistrer et noter ses jeux favoris dans sa ludothèque parmi une centaine de jeux en base de données
+                                    => Enregistrer les informations liées aux parties réalisées (joueurs, points, équipes, vainqueurs)
+                                    => Prise de photos du plateau de jeu
+                                    => Accès aux statistiques des parties réalisées
+                                    => Accessoires ludiques : lancer de dés, chronos, bloc-notes`
+                                ,
                             },
                             {
                                 title: 'Amaia Carrere',
@@ -28,7 +36,15 @@ i18next
                             },
                             {
                                 title: 'Mon portfolio',
-                                content: 'Celui-ci même !',
+                                content: 
+                                    `Celui-ci même, maquetté puis développé.\n
+                                    => Conforme aux règles d'accessibilité
+                                    => Adaptable à toute taille d'écran
+                                    => Application des pratiques de référencement SEO
+                                    => Compatible entre navigateurs
+                                    => Performances optimisées
+                                    => Ressources utilisées libres de droit, majoritairement créées par IA`
+                                ,
                             },
                         ],
                         toProject: 'Vers le projet',
@@ -64,8 +80,8 @@ i18next
                         ],
                         cv: "Télécharger CV",
                     },
-                    contactSection: {
-                        sectionName: "Contact",
+                    aboutSection: {
+                        sectionName: "A propos",
                         description: [
                             `Né à Bayonne en 1992, je vis actuellement à Dax dans le Sud Ouest de la France.\n
                             Après 10 ans d'exercice à l'hopital de Dax en tant que manipulateur en électroradiologie, je me passionne pour le développement web et mobile.`,
@@ -87,7 +103,14 @@ i18next
                         projects: [
                             {
                                 title: 'Board Game Companion',
-                                content: 'Mobile application for cataloging board games and keeping track of game sessions with friends.',
+                                content: 
+                                `Mobile app for board game library management, allowing users to catalogue their board games and track games played with friends.\n
+                                Collaborative project organized in sprints, using SCRUM methodology.\n
+                                => Record and rate favorite board games in one's library among a hundred games in the database
+                                => Record information related to games played (players, points, teams, winners)
+                                => Take photos of the game board
+                                => Access statistics of games played
+                                => Fun accessories: dice rolling, timers, notepads`,
                             },
                             {
                                 title: 'Amaia Carrere',
@@ -95,7 +118,14 @@ i18next
                             },
                             {
                                 title: 'My portfolio',
-                                content: 'This one right here!',
+                                content: 
+                                `This one right here, designed and developed.\n
+                                => Compliance with accessibility guidelines
+                                => Adaptable to all screen sizes
+                                => SEO best practices
+                                => Browser compatibility
+                                => Performance optimization
+                                => Royalty-free resources, mostly created by AI.`,
                             },
                         ],
                         toProject: 'To the project',
@@ -131,8 +161,8 @@ i18next
                         ],
                         cv: "Download CV",
                     },
-                    contactSection: {
-                        sectionName: "Contact",
+                    aboutSection: {
+                        sectionName: "About",
                         description: [
                             `Born in Bayonne in 1992, I currently live in Dax in the Southwest of France.\n
                             After 10 years of working at the hospital in Dax as a radiologic technologist, I became passionate about web and mobile development.`,

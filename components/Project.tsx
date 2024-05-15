@@ -32,7 +32,10 @@ const Project: React.FC<ProjectSectionProps> = ({
             layout 
             transition={{layout: { duration: 1, type: "spring" }}} 
             onClick={() => onClick(id)} 
-            className={`${styles.projectContainer} ${isActive && styles.active}`}
+            className={`
+                ${styles.projectContainer} 
+                ${isActive && styles.active}
+            `}
             style={{ 
                 borderRadius: "1rem", 
                 boxShadow: "2px 5px 6px rgba(224, 192, 151, .5)"
@@ -45,12 +48,12 @@ const Project: React.FC<ProjectSectionProps> = ({
                 >
                     {title}
                 </motion.h3>
-                {(isActive && githubLink !== "") &&
+                {(isActive && githubLink) &&
                     <motion.button 
                         className={styles.githubBtn} 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }}
-                        whileHover={{ scale: 1.2 }}
+                        whileHover={{ scale: 1.15 }}
                     >
                         <Link href={githubLink} target="_blank">
                             <Image
@@ -86,31 +89,31 @@ const Project: React.FC<ProjectSectionProps> = ({
                     <div className={styles.stack}>
                         {stackJSX}
                     </div>
-                    {projectLink !== "" &&
-                    <button className={styles.toProjectBtn}>
-                        <Link 
-                            href={projectLink} 
-                            target="_blank" 
-                            className={styles.projectLink} 
-                        >
-                            <p 
-                                className={`${styles.toProject} font-size1 text-copper`}
+                    {projectLink &&
+                        <button className={styles.toProjectBtn}>
+                            <Link 
+                                href={projectLink} 
+                                target="_blank" 
+                                className={styles.projectLink} 
                             >
-                                {t('projectSection.toProject')}
-                            </p>
-                            <Image 
-                                src="/external-link-arrow.png" 
-                                alt="lien externe"
-                                width={50}
-                                height={50}
-                                style={{
-                                    width: '12%',
-                                    height: 'auto',
-                                }}
-                                className={styles.externalLinkImg}
-                            />
-                        </Link>
-                    </button>
+                                <p 
+                                    className={`${styles.toProject} font-size1 text-copper`}
+                                >
+                                    {t('projectSection.toProject')}
+                                </p>
+                                <Image 
+                                    src="/external-link-arrow.png" 
+                                    alt="lien externe"
+                                    width={50}
+                                    height={50}
+                                    style={{
+                                        width: '12%',
+                                        height: 'auto',
+                                    }}
+                                    className={styles.externalLinkImg}
+                                />
+                            </Link>
+                        </button>
                     }
                 </motion.div>
             }
