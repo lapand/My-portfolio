@@ -10,9 +10,7 @@ Obligatoire :
 
 	=> Appuyer sur TAB pour contrôler l'accessibilité des boutons
 
-	=> Compresser les vidéos / images
-
-	=> Mise en cache
+	=> Compresser les vidéos / images et srcset sur les images trop lourdes
 
 Facultatif :
 
@@ -29,3 +27,7 @@ Facultatif :
 	=> Dans About.tsx, le Link placé en absolute à la suite de la vidéo ne doit pas être écrit à l'intérieur du map car il ne doit exister que pour la vidéo du livre de liaison. Au lieu de ça, il faudra l'ajouter à subSectionsJSX[1] en dehors du map avant le retour du composant.
 
 	=> Revoir l'imbrication des composants ? Un composant générique "Section" ? Répétition du JSX dans Skills.tsx et About.tsx
+
+	=> Créer des tests unitaires pour chaque composant
+
+	=> Mise en cache
