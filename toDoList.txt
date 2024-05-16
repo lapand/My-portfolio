@@ -33,3 +33,5 @@ Facultatif :
 	=> Mise en cache
 
 	=> La const sectionNames contenue dans le fichier du composant Menu peut être dynamique et venir des noms des sections dans index.tsx
+
+	=> Ajouter des effets sonores et un bouton d'activation du son
