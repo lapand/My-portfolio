@@ -129,7 +129,6 @@
     }
     .description {
         width: 100%;
-        text-align: center;
     }
     .bottom {
         flex-direction: column;
