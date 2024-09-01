@@ -60,8 +60,8 @@ const ProjectSection: React.FC = () => {
     {
       title: t("projectSection.projects.2.title"),
       videoUri: "",
-      imgUri: "/code-editor.png",
-      imgAlt: "éditeur de code",
+      imgUri: "/portfolio.png",
+      imgAlt: "screenshot de la page d'accueil de mon portfolio",
       content: t("projectSection.projects.2.content"),
       stack: [
         "Figma",
@@ -148,7 +148,7 @@ const ProjectSection: React.FC = () => {
                     </motion.video>
                   ) : (
                     <motion.div
-                      className={`${styles.mediaContainer} ${styles.imgCtn}`}
+                      className={styles.mediaContainer}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -161,7 +161,7 @@ const ProjectSection: React.FC = () => {
                         style={{
                           width: "100%",
                           height: "auto",
-                          border: "2px solid red",
+                          // border: "2px solid red",
                         }}
                       />
                     </motion.div>

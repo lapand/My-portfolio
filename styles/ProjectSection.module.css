@@ -69,9 +69,6 @@
   width: 100%;
   /* border: 2px solid rgb(191, 0, 255); */
 }
-.imgCtn {
-  width: 75%;
-}
 
 @media screen and (max-width: 1000px) {
   .rightSide {
