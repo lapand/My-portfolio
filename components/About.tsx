@@ -23,7 +23,7 @@ const About: React.FC = () => {
           gradientBlend: true,
         },
         image: {
-          imgUri: "/moi.jpg",
+          imgUri: "/moi.png",
           imgAlt: "photo de profil : andoni",
         },
       },
